@@ -1,0 +1,1981 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dumalia Lingerie Premium | Seja uma revendedora</title>
+
+    <!--Meta tags-->
+    <meta
+      name="description"
+      content="Seja uma revendedora Dumalia e lucre com lingerie premium que valoriza a mulher brasileira. Kits a partir de R$350, suporte humanizado e 10 anos de tradição. Morro da Fumaça, SC."
+    />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://dumalia.com.br/" />
+
+    <!--Open Graph-->
+    <meta
+      property="og:title"
+      content="Dumalia Revenda | Lucre com Lingerie Premium"
+    />
+    <meta
+      property="og:description"
+      content="Revenda lingerie premium Dumalia e conquiste sua independência financeira. Kits a partir de R$350, modelagem exclusiva e suporte humanizado. Morro da Fumaça, SC."
+    />
+    <meta
+      property="og:image"
+      content="https://dumalia.com.br/images/favicon.ico"
+    />
+    <meta property="og:url" content="https://dumalia.com.br/" />
+    <meta property="og:type" content="website" />
+
+    <!--Schema markup-->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "ClothingStore",
+        "name": "Dumalia",
+        "description": "Fábrica e distribuidora de lingerie premium em Morro da Fumaça, SC. Revenda com kits a partir de R$350, modelagem exclusiva antialérgica e suporte humanizado. Mais de 10 anos de história.",
+        "url": "https://dumalia.com.br/",
+        "telephone": "+5548999793174",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Morro da Fumaça",
+          "addressRegion": "SC",
+          "addressCountry": "BR"
+        },
+        "openingHours": "Mo-Sa 09:00-18:00",
+        "sameAs": [
+          "https://www.instagram.com/dumalia_oficial/",
+          "https://www.facebook.com/dumaliaoficial"
+        ]
+      }
+    </script>
+
+    <!--Favicon-->
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico" />
+
+    <!-- Font Family -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      :root {
+        --rose: #c8697a;
+        --rose-lg: #d3a2ab4b;
+        --rose-dk: #a0404f;
+        --cream: #fdf6ee;
+        --warm: #f5e8d8;
+        --sand: #e8cdb8;
+        --chocolate: #3d1e1a;
+        --mocha: #6b3a31;
+        --text: #2a1510;
+        --muted: #8a6a60;
+        --white: #fffaf6;
+        --green: #25d366;
+      }
+
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        font-family: "Plus Jakarta Sans", sans-serif;
+        background: var(--cream);
+        color: var(--text);
+        overflow-x: hidden;
+        line-height: 1.6;
+      }
+
+      h1,
+      h2,
+      h3,
+      h4 {
+        font-family: "Plus Jakarta Sans", sans-serif;
+        line-height: 1.15;
+      }
+
+      /* ── CABECALHO / NAV ── */
+      .cabecalho {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 100;
+        padding: 20px 24px;
+        transition:
+          background 0.35s,
+          box-shadow 0.35s,
+          padding 0.35s;
+      }
+
+      .cabecalho.fixo {
+        background: var(--chocolate);
+        box-shadow: 0 2px 24px rgba(0, 0, 0, 0.25);
+        padding: 14px 24px;
+      }
+
+      .cabecalho-nav {
+        max-width: 860px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 8px 36px;
+        flex-wrap: wrap;
+      }
+
+      .cabecalho-nav a {
+        color: rgba(255, 255, 255, 0.9);
+        text-decoration: none;
+        font-size: 0.88rem;
+        font-weight: 500;
+        letter-spacing: 0.02em;
+        transition: color 0.2s;
+        white-space: nowrap;
+        padding: 4px 2px;
+        border-bottom: 2px solid transparent;
+      }
+
+      .cabecalho-nav a:hover {
+        color: var(--sand);
+        border-bottom-color: var(--rose);
+      }
+
+      /* ── BOTÃO FLUTUANTE WHATSAPP ── */
+      .wa-flutuante {
+        position: fixed;
+        bottom: 24px;
+        right: 24px;
+        z-index: 999;
+        background: var(--green);
+        color: #fff;
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 4px 20px rgba(37, 211, 102, 0.5);
+        transition:
+          transform 0.25s,
+          box-shadow 0.25s;
+        text-decoration: none;
+      }
+
+      .wa-flutuante:hover {
+        transform: scale(1.12);
+        box-shadow: 0 6px 28px rgba(37, 211, 102, 0.65);
+      }
+
+      .wa-flutuante svg {
+        width: 32px;
+        height: 32px;
+        fill: #fff;
+      }
+
+      /* ── HERO ── */
+      .hero {
+        position: relative;
+        min-height: 100vh;
+        background:
+          linear-gradient(
+            150deg,
+            rgba(200, 105, 122, 0.18) 0%,
+            rgba(61, 30, 26, 0.55) 100%
+          ),
+          url("images/hero.webp") center/cover no-repeat;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding: 120px 24px 60px;
+      }
+
+      .hero::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+      }
+
+      .hero-interno {
+        position: relative;
+        max-width: 705px;
+        animation: fadeUp 0.9s ease both;
+      }
+
+      .hero h1 {
+        font-size: clamp(2.6rem, 6vw, 4.2rem);
+        color: #fff;
+        font-weight: 700;
+        text-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
+        margin-bottom: 20px;
+      }
+
+      .hero h1 em {
+        font-style: italic;
+        color: #f7c5ce;
+      }
+
+      .hero p {
+        font-size: clamp(1rem, 2.2vw, 1.18rem);
+        color: rgba(255, 255, 255, 0.88);
+        max-width: 705px;
+        margin-bottom: 36px;
+        font-weight: 300;
+      }
+
+      .btn-principal {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        background: var(--rose);
+        color: #fff;
+        font-family: "Plus Jakarta Sans", sans-serif;
+        font-size: 1rem;
+        font-weight: 600;
+        padding: 16px 32px;
+        border-radius: 8px;
+        text-decoration: none;
+        border: none;
+        cursor: pointer;
+        transition:
+          background 0.2s,
+          transform 0.2s,
+          box-shadow 0.2s;
+        box-shadow: 0 4px 18px rgba(160, 64, 79, 0.4);
+        letter-spacing: 0.01em;
+      }
+
+      .btn-principal:hover {
+        background: var(--rose-dk);
+        transform: translateY(-2px);
+        box-shadow: 0 8px 28px rgba(160, 64, 79, 0.5);
+      }
+
+      .btn-principal svg {
+        width: 20px;
+        height: 20px;
+        fill: #fff;
+        flex-shrink: 0;
+      }
+
+      /* ── BARRA DE CONFIANÇA ── */
+      .barra-confianca {
+        background: var(--chocolate);
+        color: #fff;
+        padding: 22px 24px;
+      }
+
+      .barra-confianca-interna {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px 32px;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+      }
+
+      .item-confianca {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        font-size: 0.9rem;
+        text-transform: lowercase;
+      }
+
+      .item-confianca span.val {
+        font-family: "Plus Jakarta Sans", sans-serif;
+        text-transform: uppercase;
+        font-size: 1.35rem;
+        font-weight: 700;
+        color: var(--sand);
+      }
+
+      .divisor-confianca {
+        color: var(--mocha);
+        font-size: 1.3rem;
+      }
+
+      .divisor-barra-confianca {
+        width: 100%;
+        height: 1px;
+        background: rgba(255, 255, 255, 0.13);
+        margin: 8px 0 8px;
+      }
+
+      .destaque-confianca {
+        width: 100%;
+        font-size: 0.82rem;
+        color: var(--sand);
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        opacity: 0.85;
+      }
+
+      .destaque-confianca strong {
+        color: #f7c5ce;
+      }
+
+      /* ── PADRÃO DAS SEÇÕES ── */
+      section {
+        padding: 80px 24px;
+      }
+
+      .secao-rotulo {
+        font-size: 0.75rem;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        color: var(--rose);
+        font-weight: 600;
+        margin-bottom: 12px;
+      }
+
+      .secao-titulo {
+        font-size: clamp(1.9rem, 4vw, 3.5rem);
+        font-weight: 700;
+        color: var(--chocolate);
+        margin-bottom: 16px;
+      }
+
+      .secao-subtitulo {
+        font-size: 1.05rem;
+        color: var(--muted);
+        max-width: 900px;
+        font-weight: 300;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .centralizado {
+        text-align: center;
+      }
+
+      .centralizado .secao-subtitulo {
+        margin: 0 auto;
+      }
+
+      .max-w {
+        max-width: 1120px;
+        margin: 0 auto;
+      }
+
+      /* ── BENEFÍCIOS ── */
+      .beneficios {
+        background: var(--white);
+      }
+
+      .beneficios-cabecalho {
+        text-align: center;
+        max-width: 1000px;
+        margin: 0 auto 0;
+      }
+
+      .beneficios-cabecalho .secao-rotulo,
+      .beneficios-cabecalho .secao-titulo,
+      .beneficios-cabecalho .secao-subtitulo {
+        text-align: center;
+      }
+
+      .beneficios-cabecalho .secao-subtitulo {
+        margin: 0 auto;
+      }
+
+      .beneficios-layout {
+        display: grid;
+        grid-template-columns: 1fr 300px 1fr;
+        gap: 0 48px;
+        align-items: center;
+        margin-top: 56px;
+      }
+
+      .beneficios-coluna {
+        display: flex;
+        flex-direction: column;
+        gap: 44px;
+      }
+
+      .beneficio-item {
+        text-align: center;
+      }
+
+      .beneficio-icone {
+        width: 48px;
+        height: 48px;
+        color: var(--rose);
+        margin: 0 auto 14px;
+        display: block;
+      }
+
+      .beneficio-item h3 {
+        font-size: 1.1rem;
+        font-weight: 700;
+        color: var(--chocolate);
+        margin-bottom: 8px;
+      }
+
+      .beneficio-item p {
+        font-size: 0.9rem;
+        color: var(--muted);
+        line-height: 1.65;
+      }
+
+      .beneficios-centro {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .beneficios-centro::after {
+        content: "";
+        position: absolute;
+        bottom: -14px;
+        right: -14px;
+        width: 100%;
+        height: 100%;
+        background: var(--rose-lg);
+        border-radius: 6px;
+        z-index: 0;
+      }
+
+      .beneficios-centro img {
+        position: relative;
+        z-index: 1;
+        width: 100%;
+        height: 380px;
+        object-fit: cover;
+        border-radius: 6px;
+        display: block;
+      }
+
+      .beneficios-chamada {
+        text-align: center;
+        margin-top: 64px;
+      }
+
+      @media (max-width: 860px) {
+        .beneficios-layout {
+          grid-template-columns: 1fr;
+          gap: 48px;
+        }
+
+        .beneficios-centro {
+          max-width: 400px;
+          margin: 0 auto;
+        }
+
+        .beneficios-coluna {
+          gap: 36px;
+        }
+      }
+
+      /* ── COMO FUNCIONA ── */
+      .como {
+        background: var(--chocolate);
+        color: #fff;
+      }
+
+      .como .secao-titulo {
+        color: #fff;
+      }
+
+      .como .secao-rotulo {
+        color: var(--sand);
+      }
+
+      .passos {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 32px;
+        margin-top: 52px;
+      }
+
+      .passo {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        position: relative;
+      }
+
+      .passo-numero {
+        font-family: "Plus Jakarta Sans", sans-serif;
+        font-size: 4rem;
+        font-weight: 700;
+        color: var(--rose);
+        opacity: 0.35;
+        line-height: 1;
+        margin-bottom: 12px;
+      }
+
+      .passo h3 {
+        font-size: 1.25rem;
+        color: var(--sand);
+        margin-bottom: 10px;
+        font-weight: 600;
+      }
+
+      .passo p {
+        font-size: 0.93rem;
+        color: rgba(255, 255, 255, 0.65);
+        line-height: 1.7;
+      }
+
+      /* ── SIMULAÇÃO DE LUCRO ── */
+      .simulacao {
+        background: var(--warm);
+      }
+
+      .cartoes-kits {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        gap: 24px;
+        margin-top: 52px;
+        align-items: start;
+      }
+
+      .cartao-kit {
+        background: #fff;
+        border-radius: 20px;
+        padding: 36px 28px;
+        text-align: center;
+        border: 2px solid transparent;
+        transition:
+          border 0.2s,
+          box-shadow 0.2s,
+          transform 0.2s;
+        position: relative;
+      }
+
+      .cartao-kit.destaque {
+        border-color: var(--rose);
+        box-shadow: 0 8px 40px rgba(200, 105, 122, 0.22);
+        padding: 52px 28px 44px;
+      }
+
+      .cartao-kit.destaque .kit-distintivo {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 5px;
+      }
+
+      .kit-distintivo {
+        display: none;
+        position: absolute;
+        top: -14px;
+        left: 50%;
+        transform: translateX(-50%);
+        background: var(--rose);
+        color: #fff;
+        font-size: 0.7rem;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        padding: 4px 16px;
+        border-radius: 99px;
+        font-weight: 600;
+        white-space: nowrap;
+      }
+
+      .cartao-kit:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 12px 36px rgba(200, 105, 122, 0.18);
+      }
+
+      .kit-nome {
+        font-family: "Plus Jakarta Sans", sans-serif;
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: var(--chocolate);
+        margin-bottom: 24px;
+      }
+
+      .kit-investimento {
+        font-size: 0.82rem;
+        color: var(--muted);
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        margin-bottom: 4px;
+      }
+
+      .kit-preco {
+        font-family: "Plus Jakarta Sans", sans-serif;
+        font-size: 2.2rem;
+        font-weight: 700;
+        color: var(--mocha);
+        margin-bottom: 8px;
+      }
+
+      .kit-seta {
+        font-size: 2rem;
+        color: var(--sand);
+        margin-bottom: 16px;
+        display: block;
+      }
+
+      .kit-ganho-rotulo {
+        font-size: 0.82rem;
+        color: var(--muted);
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        margin-bottom: 4px;
+      }
+
+      .kit-ganho {
+        font-family: "Plus Jakarta Sans", sans-serif;
+        font-size: 2.6rem;
+        font-weight: 700;
+        color: var(--rose-dk);
+      }
+
+      .kit-diferenciais {
+        list-style: none;
+        margin-top: 20px;
+        text-align: left;
+        border-top: 1px solid var(--warm);
+        padding-top: 16px;
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+      }
+
+      .kit-diferenciais li {
+        display: flex;
+        align-items: flex-start;
+        gap: 8px;
+        font-size: 0.84rem;
+        color: var(--muted);
+        line-height: 1.4;
+      }
+
+      .kit-diferenciais li::before {
+        content: "✓";
+        color: var(--rose);
+        font-weight: 700;
+        flex-shrink: 0;
+        margin-top: 1px;
+      }
+
+      .nota-simulacao {
+        text-align: center;
+        margin-top: 28px;
+        font-size: 0.9rem;
+        color: var(--muted);
+      }
+
+      /* ── DEPOIMENTOS ── */
+      .depoimentos {
+        background: var(--white);
+      }
+
+      .depoimentos-grade {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 24px;
+        margin-top: 48px;
+      }
+
+      .depoimento-cartao {
+        background: var(--cream);
+        border: 1px solid var(--sand);
+        border-radius: 16px;
+        padding: 28px 24px;
+      }
+
+      .depoimento-estrelas {
+        color: #e8a030;
+        font-size: 1.1rem;
+        margin-bottom: 12px;
+      }
+
+      .depoimento-texto {
+        font-size: 0.95rem;
+        color: var(--text);
+        line-height: 1.7;
+        font-style: italic;
+        margin-bottom: 16px;
+      }
+
+      .depoimento-autor {
+        font-size: 0.85rem;
+        color: var(--muted);
+        font-weight: 600;
+      }
+
+      .depoimento-local {
+        font-size: 0.78rem;
+        color: var(--rose);
+      }
+
+      .depoimento-placeholder {
+        border: 2px dashed var(--sand);
+        border-radius: 16px;
+        padding: 32px;
+        text-align: center;
+        color: var(--muted);
+        font-size: 0.9rem;
+      }
+
+      /* ── PRODUTOS ── */
+      .produtos {
+        background: var(--warm);
+      }
+
+      .cartoes-produto {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        gap: 24px;
+        margin-top: 48px;
+      }
+
+      .cartao-produto {
+        background: #fff;
+        border-radius: 20px;
+        overflow: hidden;
+        transition:
+          transform 0.25s,
+          box-shadow 0.25s;
+      }
+
+      .cartao-produto:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 12px 40px rgba(0, 0, 0, 0.1);
+      }
+
+      .imagem-produto {
+        height: 300px;
+        background-size: cover;
+        background-position: center;
+        position: relative;
+      }
+
+      .etiqueta-produto {
+        position: absolute;
+        bottom: 12px;
+        left: 12px;
+        background: var(--rose);
+        color: #fff;
+        font-size: 0.72rem;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        padding: 4px 12px;
+        border-radius: 99px;
+        font-weight: 600;
+      }
+
+      .corpo-produto {
+        padding: 24px;
+      }
+
+      .corpo-produto h3 {
+        font-size: 1.3rem;
+        color: var(--chocolate);
+        margin-bottom: 8px;
+        font-weight: 600;
+      }
+
+      .corpo-produto p {
+        font-size: 0.92rem;
+        color: var(--muted);
+      }
+
+      /* ── FAQ ── */
+      .faq {
+        background: var(--white);
+      }
+
+      .faq-lista {
+        max-width: 720px;
+        margin: 48px auto 0;
+      }
+
+      .faq-item {
+        border-bottom: 1px solid var(--sand);
+      }
+
+      .faq-pergunta {
+        width: 100%;
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 22px 0;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-family: "Plus Jakarta Sans", sans-serif;
+        font-size: 1rem;
+        font-weight: 600;
+        color: var(--chocolate);
+        text-align: left;
+        gap: 16px;
+      }
+
+      .faq-pergunta:hover {
+        color: var(--rose);
+      }
+
+      .faq-icone {
+        width: 28px;
+        height: 28px;
+        flex-shrink: 0;
+        border: 2px solid var(--sand);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--rose);
+        font-size: 1rem;
+        transition: transform 0.25s;
+      }
+
+      .faq-item.aberto .faq-icone {
+        transform: rotate(45deg);
+      }
+
+      .faq-resposta {
+        display: none;
+        padding: 0 0 20px;
+        font-size: 0.95rem;
+        color: var(--muted);
+        line-height: 1.7;
+      }
+
+      .faq-item.aberto .faq-resposta {
+        display: block;
+      }
+
+      /* ── CHAMADA FINAL ── */
+      .chamada-final {
+        background: linear-gradient(
+          135deg,
+          var(--rose-dk) 0%,
+          var(--chocolate) 100%
+        );
+        padding: 100px 24px;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .chamada-final::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.04'%3E%3Ccircle cx='30' cy='30' r='2'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        pointer-events: none;
+      }
+
+      .chamada-final h2 {
+        font-size: clamp(2rem, 5vw, 3.4rem);
+        color: #fff;
+        margin-bottom: 16px;
+        font-weight: 700;
+      }
+
+      .chamada-final p {
+        color: rgba(255, 255, 255, 0.75);
+        font-size: 1.05rem;
+        margin-bottom: 40px;
+        max-width: 520px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .btn-whatsapp {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        background: var(--green);
+        color: #fff;
+        font-family: "Plus Jakarta Sans", sans-serif;
+        font-size: 1.05rem;
+        font-weight: 600;
+        padding: 18px 36px;
+        border-radius: 8px;
+        text-decoration: none;
+        transition:
+          background 0.2s,
+          transform 0.2s,
+          box-shadow 0.2s;
+        box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+      }
+
+      .btn-whatsapp:hover {
+        background: #1da851;
+        transform: translateY(-2px);
+        box-shadow: 0 8px 32px rgba(37, 211, 102, 0.5);
+      }
+
+      .btn-whatsapp svg {
+        width: 22px;
+        height: 22px;
+        fill: #fff;
+      }
+
+      /* ── RODAPÉ ── */
+      .rodape {
+        background: #1a0b09;
+        color: rgba(255, 255, 255, 0.5);
+        font-size: 0.85rem;
+      }
+
+      .rodape-topo {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 64px 40px 48px;
+        display: flex;
+        gap: 64px;
+        align-items: flex-start;
+      }
+
+      .rodape-esquerda {
+        flex: 0 0 330px;
+      }
+
+      .rodape-esquerda img {
+        width: 200px;
+        height: auto;
+      }
+
+      .rodape-descricao {
+        color: rgba(255, 255, 255, 0.55);
+        font-size: 0.88rem;
+        line-height: 1.75;
+        margin-bottom: 24px;
+      }
+
+      .rodape-sociais {
+        display: flex;
+        gap: 10px;
+      }
+
+      .rodape-sociais a {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        border: 1px solid rgba(255, 255, 255, 0.15);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: rgba(255, 255, 255, 0.55);
+        text-decoration: none;
+        transition:
+          border-color 0.2s,
+          color 0.2s,
+          background 0.2s;
+      }
+
+      .rodape-sociais a:hover {
+        border-color: var(--rose);
+        color: var(--rose);
+        background: rgba(200, 105, 122, 0.1);
+      }
+
+      .rodape-sociais svg {
+        fill: currentColor;
+      }
+
+      .rodape-colunas {
+        display: flex;
+        gap: 48px;
+        flex: 1;
+        justify-content: flex-end;
+        padding-top: 6px;
+      }
+
+      .rodape-coluna h4 {
+        color: var(--sand);
+        font-size: 0.8rem;
+        font-weight: 700;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        margin-bottom: 20px;
+      }
+
+      .rodape-coluna ul {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .rodape-coluna a {
+        color: rgba(255, 255, 255, 0.55);
+        text-decoration: none;
+        font-size: 0.88rem;
+        transition: color 0.2s;
+        line-height: 1.4;
+      }
+
+      .rodape-coluna a:hover {
+        color: var(--rose);
+      }
+
+      .rodape-base {
+        border-top: 1px solid rgba(255, 255, 255, 0.08);
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 22px 40px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        font-size: 0.82rem;
+      }
+
+      .rodape-dev {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        color: rgba(255, 255, 255, 0.4);
+      }
+
+      .logo-dev {
+        height: 26px;
+        width: auto;
+        opacity: 0.65;
+        object-fit: contain;
+        transition: opacity 0.25s ease;
+      }
+
+      .logo-dev:hover {
+        opacity: 1;
+      }
+
+      @media (max-width: 960px) {
+        .rodape-topo {
+          flex-direction: column;
+          gap: 40px;
+          padding: 48px 24px 40px;
+        }
+
+        .rodape-esquerda {
+          flex: none;
+        }
+
+        .rodape-colunas {
+          gap: 32px;
+          justify-content: flex-start;
+          flex-wrap: wrap;
+        }
+
+        .rodape-base {
+          padding: 20px 24px;
+          flex-direction: column;
+          gap: 12px;
+          text-align: center;
+        }
+      }
+
+      /* ── ANIMAÇÕES ── */
+      @keyframes fadeUp {
+        from {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .revelar {
+        opacity: 0;
+        transform: translateY(24px);
+        transition:
+          opacity 0.65s ease,
+          transform 0.65s ease;
+      }
+
+      .revelar.visivel {
+        opacity: 1;
+        transform: none;
+      }
+
+      /* ── RESPONSIVO ── */
+      @media (max-width: 600px) {
+        .divisor-confianca {
+          display: none;
+        }
+
+        .item-confianca {
+          font-size: 0.82rem;
+        }
+
+        section {
+          padding: 64px 20px;
+        }
+
+        .cabecalho-nav {
+          gap: 6px 20px;
+        }
+
+        .cabecalho-nav a {
+          font-size: 0.78rem;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- CABEÇALHO / NAV -->
+    <header class="cabecalho" id="cabecalho">
+      <nav class="cabecalho-nav" aria-label="Menu principal">
+        <a href="#beneficios">Por que escolher Dumalia</a>
+        <a href="#como">Como funciona</a>
+        <a href="#simulacao">Simulação</a>
+        <a href="#depoimentos">Depoimentos</a>
+        <a href="#faq">FAQ</a>
+      </nav>
+    </header>
+
+    <!-- BOTÃO FLUTUANTE WA -->
+    <a
+      href="https://wa.me/5548999793174?text=Ol%C3%A1%2C%20quero%20ser%20revendedora%20Dumalia%2C%20como%20fa%C3%A7o%3F"
+      class="wa-flutuante"
+      target="_blank"
+      rel="noopener"
+      aria-label="WhatsApp Dumalia"
+    >
+      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path
+          d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"
+        />
+      </svg>
+    </a>
+
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero-interno">
+        <h1>
+          Lucre com a Lingerie que <em>valoriza as curvas</em> da mulher
+          brasileira
+        </h1>
+        <p>
+          Seja uma revendedora Dumalia. Qualidade premium, modelagem exclusiva
+          e<br />
+          10 anos de história para você faturar com confiança e segurança de
+          estoque.
+        </p>
+        <a
+          href="https://wa.me/5548999793174?text=Ol%C3%A1%2C%20quero%20ser%20revendedora%20Dumalia%2C%20como%20fa%C3%A7o%3F"
+          class="btn-principal"
+          target="_blank"
+          rel="noopener"
+        >
+          <svg viewBox="0 0 24 24">
+            <path
+              d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"
+            />
+          </svg>
+          Quero começar a revender agora
+        </a>
+      </div>
+    </section>
+
+    <!-- BARRA DE CONFIANÇA -->
+    <div class="barra-confianca">
+      <div class="barra-confianca-interna">
+        <div class="item-confianca">
+          <span class="val">+10</span>&nbsp;Anos de História
+        </div>
+        <span class="divisor-confianca">·</span>
+        <div class="item-confianca">
+          <span class="val">Milhares</span>&nbsp;de Peças Produzidas
+        </div>
+        <span class="divisor-confianca">·</span>
+        <div class="item-confianca">
+          <span class="val">Suporte</span>&nbsp;humanizado
+        </div>
+        <span class="divisor-confianca">·</span>
+        <div class="item-confianca">
+          <span class="val">Qualidade Premium</span>&nbsp;em todas as peças
+        </div>
+        <!-- Linha divisória entre itens e destaque -->
+        <div class="divisor-barra-confianca"></div>
+        <p class="destaque-confianca">
+          Capacidade produtiva ampliada |
+          <strong>Garantia de estoque para o seu crescimento.</strong>
+        </p>
+      </div>
+    </div>
+
+    <!-- BENEFÍCIOS -->
+    <section class="beneficios revelar" id="beneficios">
+      <div class="max-w">
+        <div class="beneficios-cabecalho">
+          <p class="secao-rotulo">Por que revender Dumalia?</p>
+          <h2 class="secao-titulo">
+            Tudo pensado para
+            <em style="font-style: italic; color: var(--rose)">você crescer</em>
+            com segurança
+          </h2>
+          <p class="secao-subtitulo">
+            Da modelagem à entrega, cada detalhe foi desenvolvido para que sua
+            revenda seja simples, lucrativa e duradoura.
+          </p>
+        </div>
+
+        <div class="beneficios-layout">
+          <!-- Coluna esquerda -->
+          <div class="beneficios-coluna">
+            <div class="beneficio-item">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="64"
+                height="64"
+                fill="#c8697a"
+                viewBox="0 0 256 256"
+              >
+                <path
+                  d="M223.45,40.07a8,8,0,0,0-7.52-7.52C139.8,28.08,78.82,51,52.82,94a87.09,87.09,0,0,0-12.76,49c.57,15.92,5.21,32,13.79,47.85l-19.51,19.5a8,8,0,0,0,11.32,11.32l19.5-19.51C81,210.73,97.09,215.37,113,215.94q1.67.06,3.33.06A86.93,86.93,0,0,0,162,203.18C205,177.18,227.93,116.21,223.45,40.07ZM153.75,189.5c-22.75,13.78-49.68,14-76.71.77l88.63-88.62a8,8,0,0,0-11.32-11.32L65.73,179c-13.19-27-13-54,.77-76.71,22.09-36.47,74.6-56.44,141.31-54.06C210.2,114.89,190.22,167.41,153.75,189.5Z"
+                ></path>
+              </svg>
+              <h3>Rendas Antialérgicas</h3>
+              <p>
+                Utilizamos rendas em poliamida, que são mais suaves ao toque e
+                ideais para peles sensíveis, um diferencial que fideliza
+                clientes.
+              </p>
+            </div>
+            <div class="beneficio-item">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="64"
+                height="64"
+                fill="#c8697a"
+                viewBox="0 0 256 256"
+              >
+                <path
+                  d="M225.86,102.82c-3.77-3.94-7.67-8-9.14-11.57-1.36-3.27-1.44-8.69-1.52-13.94-.15-9.76-.31-20.82-8-28.51s-18.75-7.85-28.51-8c-5.25-.08-10.67-.16-13.94-1.52-3.56-1.47-7.63-5.37-11.57-9.14C146.28,23.51,138.44,16,128,16s-18.27,7.51-25.18,14.14c-3.94,3.77-8,7.67-11.57,9.14C88,40.64,82.56,40.72,77.31,40.8c-9.76.15-20.82.31-28.51,8S41,67.55,40.8,77.31c-.08,5.25-.16,10.67-1.52,13.94-1.47,3.56-5.37,7.63-9.14,11.57C23.51,109.72,16,117.56,16,128s7.51,18.27,14.14,25.18c3.77,3.94,7.67,8,9.14,11.57,1.36,3.27,1.44,8.69,1.52,13.94.15,9.76.31,20.82,8,28.51s18.75,7.85,28.51,8c5.25.08,10.67.16,13.94,1.52,3.56,1.47,7.63,5.37,11.57,9.14C109.72,232.49,117.56,240,128,240s18.27-7.51,25.18-14.14c3.94-3.77,8-7.67,11.57-9.14,3.27-1.36,8.69-1.44,13.94-1.52,9.76-.15,20.82-.31,28.51-8s7.85-18.75,8-28.51c.08-5.25.16-10.67,1.52-13.94,1.47-3.56,5.37-7.63,9.14-11.57C232.49,146.28,240,138.44,240,128S232.49,109.73,225.86,102.82Zm-11.55,39.29c-4.79,5-9.75,10.17-12.38,16.52-2.52,6.1-2.63,13.07-2.73,19.82-.1,7-.21,14.33-3.32,17.43s-10.39,3.22-17.43,3.32c-6.75.1-13.72.21-19.82,2.73-6.35,2.63-11.52,7.59-16.52,12.38S132,224,128,224s-9.15-4.92-14.11-9.69-10.17-9.75-16.52-12.38c-6.1-2.52-13.07-2.63-19.82-2.73-7-.1-14.33-.21-17.43-3.32s-3.22-10.39-3.32-17.43c-.1-6.75-.21-13.72-2.73-19.82-2.63-6.35-7.59-11.52-12.38-16.52S32,132,32,128s4.92-9.15,9.69-14.11,9.75-10.17,12.38-16.52c2.52-6.1,2.63-13.07,2.73-19.82.1-7,.21-14.33,3.32-17.43S70.51,56.9,77.55,56.8c6.75-.1,13.72-.21,19.82-2.73,6.35-2.63,11.52-7.59,16.52-12.38S124,32,128,32s9.15,4.92,14.11,9.69,10.17,9.75,16.52,12.38c6.1,2.52,13.07,2.63,19.82,2.73,7,.1,14.33.21,17.43,3.32s3.22,10.39,3.32,17.43c.1,6.75.21,13.72,2.73,19.82,2.63,6.35,7.59,11.52,12.38,16.52S224,124,224,128,219.08,137.15,214.31,142.11ZM173.66,98.34a8,8,0,0,1,0,11.32l-56,56a8,8,0,0,1-11.32,0l-24-24a8,8,0,0,1,11.32-11.32L112,148.69l50.34-50.35A8,8,0,0,1,173.66,98.34Z"
+                ></path>
+              </svg>
+              <h3>Metais Hipoalergênicos</h3>
+              <p>
+                Todos os aviamentos metálicos são banhados a ouro ou prata,
+                evitando alergias e elevando o acabamento das peças.
+              </p>
+            </div>
+            <div class="beneficio-item">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="64"
+                height="64"
+                fill="#c8697a"
+                viewBox="0 0 256 256"
+              >
+                <path
+                  d="M178,40c-20.65,0-38.73,8.88-50,23.89C116.73,48.88,98.65,40,78,40a62.07,62.07,0,0,0-62,62c0,70,103.79,126.66,108.21,129a8,8,0,0,0,7.58,0C136.21,228.66,240,172,240,102A62.07,62.07,0,0,0,178,40ZM128,214.8C109.74,204.16,32,155.69,32,102A46.06,46.06,0,0,1,78,56c19.45,0,35.78,10.36,42.6,27a8,8,0,0,0,14.8,0c6.82-16.67,23.15-27,42.6-27a46.06,46.06,0,0,1,46,46C224,155.61,146.24,204.15,128,214.8Z"
+                ></path>
+              </svg>
+              <h3>Modelagem Exclusiva</h3>
+              <p>
+                Modelagens próprias, pensadas para valorizar e respeitar a
+                anatomia da mulher brasileira em todas as etapas.
+              </p>
+            </div>
+          </div>
+
+          <!-- Imagem central -->
+          <div class="beneficios-centro">
+            <img src="images/logo.webp" alt="Lingerie Dumalia" />
+          </div>
+
+          <!-- Coluna direita -->
+          <div class="beneficios-coluna">
+            <div class="beneficio-item">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="64"
+                height="64"
+                fill="#c8697a"
+                viewBox="0 0 256 256"
+              >
+                <path
+                  d="M184,24H72A16,16,0,0,0,56,40V76a16.07,16.07,0,0,0,6.4,12.8L114.67,128,62.4,167.2A16.07,16.07,0,0,0,56,180v36a16,16,0,0,0,16,16H184a16,16,0,0,0,16-16V180.36a16.09,16.09,0,0,0-6.35-12.77L141.27,128l52.38-39.6A16.05,16.05,0,0,0,200,75.64V40A16,16,0,0,0,184,24Zm0,16V56H72V40Zm0,176H72V180l56-42,56,42.35Zm-56-98L72,76V72H184v3.64Z"
+                ></path>
+              </svg>
+              <h3>Durabilidade acima da média</h3>
+              <p>
+                Peças que mantêm forma, elasticidade e beleza mesmo após várias
+                lavagens, desde que seguidas corretamente as instruções de
+                cuidado indicadas na etiqueta.
+              </p>
+            </div>
+            <div class="beneficio-item">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="64"
+                height="64"
+                fill="#c8697a"
+                viewBox="0 0 256 256"
+              >
+                <path
+                  d="M223.68,66.15,135.68,18a15.88,15.88,0,0,0-15.36,0l-88,48.17a16,16,0,0,0-8.32,14v95.64a16,16,0,0,0,8.32,14l88,48.17a15.88,15.88,0,0,0,15.36,0l88-48.17a16,16,0,0,0,8.32-14V80.18A16,16,0,0,0,223.68,66.15ZM128,32l80.34,44-29.77,16.3-80.35-44ZM128,120,47.66,76l33.9-18.56,80.34,44ZM40,90l80,43.78v85.79L40,175.82Zm176,85.78h0l-80,43.79V133.82l32-17.51V152a8,8,0,0,0,16,0V107.55L216,90v85.77Z"
+                ></path>
+              </svg>
+              <h3>Facilidade para a revendedora</h3>
+              <p>
+                Após a primeira compra, sem valor mínimo para reposição,
+                proporcionando mais liberdade e flexibilidade para gerir seu
+                estoque do seu jeito.
+              </p>
+            </div>
+            <div class="beneficio-item">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="64"
+                height="64"
+                fill="#c8697a"
+                viewBox="0 0 256 256"
+              >
+                <path
+                  d="M208,40H48A16,16,0,0,0,32,56v56c0,52.72,25.52,84.67,46.93,102.19,23.06,18.86,46,25.26,47,25.53a8,8,0,0,0,4.2,0c1-.27,23.91-6.67,47-25.53C198.48,196.67,224,164.72,224,112V56A16,16,0,0,0,208,40Zm0,72c0,37.07-13.66,67.16-40.6,89.42A129.3,129.3,0,0,1,128,223.62a128.25,128.25,0,0,1-38.92-21.81C61.82,179.51,48,149.3,48,112l0-56,160,0ZM82.34,141.66a8,8,0,0,1,11.32-11.32L112,148.69l50.34-50.35a8,8,0,0,1,11.32,11.32l-56,56a8,8,0,0,1-11.32,0Z"
+                ></path>
+              </svg>
+              <h3>Segurança na venda</h3>
+              <p>
+                O lojista tem a tranquilidade de oferecer às suas clientes peças
+                de alta qualidade, com excelente aceitação e satisfação no uso,
+                tendo total tranquilidade para você vender.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="beneficios-chamada">
+          <a
+            href="https://wa.me/5548999793174?text=Ol%C3%A1%2C%20quero%20ser%20revendedora%20Dumalia%2C%20como%20fa%C3%A7o%3F"
+            class="btn-principal"
+            target="_blank"
+            rel="noopener"
+          >
+            <svg viewBox="0 0 24 24">
+              <path
+                d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"
+              />
+            </svg>
+            Quero começar a revender agora
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- COMO FUNCIONA -->
+    <section class="como revelar" id="como">
+      <div class="max-w">
+        <p class="secao-rotulo centralizado">Como funciona</p>
+        <h2 class="secao-titulo centralizado" style="color: #fff">
+          Do clique à sua primeira venda<br />em 4 passos simples
+        </h2>
+        <div class="passos">
+          <div class="passo">
+            <span class="passo-numero">01</span>
+            <h3>Clique no Botão</h3>
+            <p>
+              Você será recebida pela nossa consultora no WhatsApp para entender
+              seu perfil e as melhores oportunidades para você.
+            </p>
+          </div>
+          <div class="passo">
+            <span class="passo-numero">02</span>
+            <h3>Escolha seu Mix</h3>
+            <p>
+              Receba o catálogo completo e selecione as peças que mais combinam
+              com o perfil das suas clientes. Temos opções para todos os gostos.
+            </p>
+          </div>
+          <div class="passo">
+            <span class="passo-numero">03</span>
+            <h3>Receba e Venda</h3>
+            <p>
+              Seu pedido é enviado com agilidade. Foco especial em SC e RS com
+              fretes competitivos mas entregamos em todo o Brasil.
+            </p>
+          </div>
+          <div class="passo">
+            <span class="passo-numero">04</span>
+            <h3>Lucre!</h3>
+            <p>
+              Margens pensadas para a sua independência financeira real. Quanto
+              mais você vende, mais você cresce com a Dumalia.
+            </p>
+          </div>
+        </div>
+        <div style="text-align: center; margin-top: 52px">
+          <a
+            href="https://wa.me/5548999793174?text=Ol%C3%A1%2C%20quero%20ser%20revendedora%20Dumalia%2C%20como%20fa%C3%A7o%3F"
+            class="btn-principal"
+            target="_blank"
+            rel="noopener"
+          >
+            <svg viewBox="0 0 24 24">
+              <path
+                d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"
+              />
+            </svg>
+            Quero ser uma revendedora Dumalia
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- SIMULAÇÃO DE LUCRO -->
+    <section class="simulacao revelar" id="simulacao">
+      <div class="max-w centralizado">
+        <p class="secao-rotulo">Simule seus lucros</p>
+        <h2 class="secao-titulo">Veja quanto você pode ganhar</h2>
+        <p class="secao-subtitulo">
+          Escolha o kit que cabe no seu momento e veja o potencial de retorno.
+        </p>
+        <div class="cartoes-kits">
+          <!-- Kit Inicial -->
+          <div class="cartao-kit">
+            <div class="kit-nome">Kit Inicial</div>
+            <p class="kit-investimento">Investimento</p>
+            <p class="kit-preco">R$ 350</p>
+            <span class="kit-seta">↓</span>
+            <p class="kit-ganho-rotulo">Faturamento Estimado</p>
+            <p class="kit-ganho">R$ 800</p>
+            <ul class="kit-diferenciais">
+              <li>12 conjuntos selecionados</li>
+              <li>Suporte via WhatsApp incluso</li>
+              <li>Catálogo digital completo</li>
+              <li>Reposição sem pedido mínimo</li>
+            </ul>
+          </div>
+
+          <!-- Kit Empreendedora (destaque) -->
+          <div class="cartao-kit destaque">
+            <span class="kit-distintivo"
+              ><svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="20"
+                height="20"
+                fill="#E4BD37"
+                viewBox="0 0 256 256"
+              >
+                <path
+                  d="M234.29,114.85l-45,38.83L203,211.75a16.4,16.4,0,0,1-24.5,17.82L128,198.49,77.47,229.57A16.4,16.4,0,0,1,53,211.75l13.76-58.07-45-38.83A16.46,16.46,0,0,1,31.08,86l59-4.76,22.76-55.08a16.36,16.36,0,0,1,30.27,0l22.75,55.08,59,4.76a16.46,16.46,0,0,1,9.37,28.86Z"
+                ></path>
+              </svg>
+              Mais Popular</span
+            >
+            <div class="kit-nome">Kit Empreendedora</div>
+            <p class="kit-investimento">Investimento</p>
+            <p class="kit-preco">R$ 800</p>
+            <span class="kit-seta">↓</span>
+            <p class="kit-ganho-rotulo">Faturamento Estimado</p>
+            <p class="kit-ganho">R$ 1.800</p>
+            <ul class="kit-diferenciais">
+              <li>25 conjuntos selecionados</li>
+              <li>Mix premium de modelos</li>
+              <li>Consultoria de vendas personalizada</li>
+              <li>Prioridade no atendimento e estoque</li>
+            </ul>
+          </div>
+
+          <!-- Kit Profissional -->
+          <div class="cartao-kit">
+            <div class="kit-nome">Kit Profissional</div>
+            <p class="kit-investimento">Investimento</p>
+            <p class="kit-preco">R$ 1.500</p>
+            <span class="kit-seta">↓</span>
+            <p class="kit-ganho-rotulo">Faturamento Estimado</p>
+            <p class="kit-ganho">R$ 3.500</p>
+            <ul class="kit-diferenciais">
+              <li>50+ conjuntos selecionados</li>
+              <li>Acesso a lançamentos exclusivos</li>
+              <li>Desconto progressivo por volume</li>
+              <li>Gerente de conta dedicada</li>
+            </ul>
+          </div>
+        </div>
+        <p class="nota-simulacao">
+          Atendemos CPF e CNPJ. Margens calculadas com base em revendedoras
+          ativas da nossa rede.
+        </p>
+      </div>
+    </section>
+
+    <!-- DEPOIMENTOS -->
+    <section class="depoimentos revelar" id="depoimentos">
+      <div class="max-w">
+        <p class="secao-rotulo centralizado">Depoimentos</p>
+        <h2 class="secao-titulo centralizado">
+          O que dizem as nossas revendedoras
+        </h2>
+        <p class="secao-subtitulo centralizado" style="margin: 0 auto 0">
+          Resultados reais de mulheres reais que apostaram na Dumalia.
+        </p>
+        <div class="depoimentos-grade" style="margin-top: 48px">
+          <div class="depoimento-cartao">
+            <div class="depoimento-estrelas">★★★★★</div>
+            <p class="depoimento-texto">
+              "Da para sentir todo cuidado e carinho que possuem em cada
+              detalhe, desde o atendimento até a entrega. Recomendarei com
+              certeza, sem palavras para descrever mesmo o quanto amei."
+            </p>
+            <!-- <p class="depoimento-autor">Ana Paula S.</p>
+            <p class="depoimento-local">Criciúma – SC</p> -->
+          </div>
+
+          <div class="depoimento-cartao">
+            <div class="depoimento-estrelas">★★★★★</div>
+            <p class="depoimento-texto">
+              "Eu amo essa marca, todo mês eu compro uma peça. Qualidade e
+              atendimento incríveis."
+            </p>
+            <!-- <p class="depoimento-autor">Fernanda R.</p>
+            <p class="depoimento-local">Porto Alegre – RS</p> -->
+          </div>
+
+          <div class="depoimento-cartao">
+            <div class="depoimento-estrelas">★★★★★</div>
+            <p class="depoimento-texto">
+              "Sou revendedora Dumalia a alguns meses, e posso garantir que são
+              peças de ótima qualidade, minhas clientes são só elogios. Sem
+              contar que ser revendedora da marca voce tem vantagens e ainda sai
+              com um extra no final do mês."
+            </p>
+            <!-- <p class="depoimento-autor">Fernanda R.</p>
+            <p class="depoimento-local">Porto Alegre – RS</p> -->
+          </div>
+
+          <div class="depoimento-cartao">
+            <div class="depoimento-estrelas">★★★★★</div>
+            <p class="depoimento-texto">
+              "Produtos de ótima qualidade, além da flexibilidade de poder
+              personalizar o mesmo de acordo com o nosso corpo. Muito bom, super
+              recomendo."
+            </p>
+            <!-- <p class="depoimento-autor">Fernanda R.</p>
+            <p class="depoimento-local">Porto Alegre – RS</p> -->
+          </div>
+
+          <div class="depoimento-cartao">
+            <div class="depoimento-estrelas">★★★★★</div>
+            <p class="depoimento-texto">
+              "Passando para avisar que o dia dos namorados foi um sucesso de
+              vendas. Eu vendo a mais de 3 anos mas nunca vendi tanto nessa
+              data, as lingerie de vocês se vendem sozinhas. Essa semana vou
+              passar aí novamente por que já estou sem nada."
+            </p>
+            <!-- <p class="depoimento-autor">Fernanda R.</p>
+            <p class="depoimento-local">Porto Alegre – RS</p> -->
+          </div>
+
+          <div class="depoimento-cartao">
+            <div class="depoimento-estrelas">★★★★★</div>
+            <p class="depoimento-texto">
+              "Meu guarda-roupa é só Dumalia, dos sutiãs as calcinhas, até os
+              biquínis, cangas, pijamas de dormir, as camisolas. Enfim, não tem
+              lançamento que eu não encomende o meu."
+            </p>
+            <!-- <p class="depoimento-autor">Fernanda R.</p>
+            <p class="depoimento-local">Porto Alegre – RS</p> -->
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PRODUTOS -->
+    <section class="produtos revelar">
+      <div class="max-w">
+        <p class="secao-rotulo centralizado">Linha Completa</p>
+        <h2 class="secao-titulo centralizado">
+          Um ecossistema completo para suas clientes
+        </h2>
+        <p class="secao-subtitulo centralizado">
+          Além da linha principal de lingerie, produtos sazonais que aumentam
+          seu ticket médio.
+        </p>
+        <div class="cartoes-produto">
+          <div class="cartao-produto">
+            <div
+              class="imagem-produto"
+              style="background-image: url(images/lingerie.webp)"
+            >
+              <span class="etiqueta-produto">Carro-chefe</span>
+            </div>
+            <div class="corpo-produto">
+              <h3>Lingerie Premium</h3>
+              <p>
+                Nossa linha principal. Modelagem exclusiva que respeita e
+                valoriza as curvas, com qualidade que fideliza.
+              </p>
+            </div>
+          </div>
+
+          <div class="cartao-produto">
+            <div
+              class="imagem-produto"
+              style="background-image: url(images/pijamas.webp)"
+            >
+              <span class="etiqueta-produto">Inverno</span>
+            </div>
+            <div class="corpo-produto">
+              <h3>Pijamas de Inverno</h3>
+              <p>
+                Conforto e elegância para as noites frias. Peças que encantam e
+                ampliam o seu mix de vendas.
+              </p>
+            </div>
+          </div>
+
+          <div class="cartao-produto">
+            <div
+              class="imagem-produto"
+              style="background-image: url(images/praia.webp)"
+            >
+              <span class="etiqueta-produto">Verão</span>
+            </div>
+            <div class="corpo-produto">
+              <h3>Linha Praia</h3>
+              <p>
+                Modelagens que trazem confiança para o verão. Amplie seu
+                faturamento na estação mais quente do ano.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="faq revelar" id="faq">
+      <div class="max-w">
+        <p class="secao-rotulo centralizado">Dúvidas Frequentes</p>
+        <h2 class="secao-titulo centralizado">Tudo que você precisa saber</h2>
+        <div class="faq-lista">
+          <div class="faq-item">
+            <button class="faq-pergunta">
+              Qual o pedido mínimo para começar a revender?
+              <span class="faq-icone"
+                ><svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="14"
+                  height="14"
+                  fill="#c8697a"
+                  viewBox="0 0 256 256"
+                >
+                  <path
+                    d="M228,128a12,12,0,0,1-12,12H140v76a12,12,0,0,1-24,0V140H40a12,12,0,0,1,0-24h76V40a12,12,0,0,1,24,0v76h76A12,12,0,0,1,228,128Z"
+                  ></path></svg
+              ></span>
+            </button>
+            <div class="faq-resposta">
+              O pedido mínimo é de <strong>12 conjuntos</strong> ou
+              <strong>20 peças avulsas</strong>, com investimento inicial a
+              partir de aproximadamente R$&nbsp;400,00. Ideal para quem quer
+              testar e já lucrar desde o primeiro pedido.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-pergunta">
+              Preciso ter CNPJ para comprar?
+              <span class="faq-icone"
+                ><svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="14"
+                  height="14"
+                  fill="#c8697a"
+                  viewBox="0 0 256 256"
+                >
+                  <path
+                    d="M228,128a12,12,0,0,1-12,12H140v76a12,12,0,0,1-24,0V140H40a12,12,0,0,1,0-24h76V40a12,12,0,0,1,24,0v76h76A12,12,0,0,1,228,128Z"
+                  ></path></svg
+              ></span>
+            </button>
+            <div class="faq-resposta">
+              Não! Atendemos tanto <strong>CPF</strong> quanto
+              <strong>CNPJ</strong>. Você pode começar como pessoa física e,
+              conforme seu negócio crescer, formalizar sua atividade.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-pergunta">
+              Como é feito o envio dos pedidos?
+              <span class="faq-icone"
+                ><svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="14"
+                  height="14"
+                  fill="#c8697a"
+                  viewBox="0 0 256 256"
+                >
+                  <path
+                    d="M228,128a12,12,0,0,1-12,12H140v76a12,12,0,0,1-24,0V140H40a12,12,0,0,1,0-24h76V40a12,12,0,0,1,24,0v76h76A12,12,0,0,1,228,128Z"
+                  ></path></svg
+              ></span>
+            </button>
+            <div class="faq-resposta">
+              Enviamos para <strong>todo o Brasil</strong>, com foco e agilidade
+              especial na região Sul (SC e RS), onde temos fretes mais
+              competitivos por conta da nossa localização em Morro da Fumaça –
+              SC.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-pergunta">
+              Como funciona a margem de lucro?
+              <span class="faq-icone"
+                ><svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="14"
+                  height="14"
+                  fill="#c8697a"
+                  viewBox="0 0 256 256"
+                >
+                  <path
+                    d="M228,128a12,12,0,0,1-12,12H140v76a12,12,0,0,1-24,0V140H40a12,12,0,0,1,0-24h76V40a12,12,0,0,1,24,0v76h76A12,12,0,0,1,228,128Z"
+                  ></path></svg
+              ></span>
+            </button>
+            <div class="faq-resposta">
+              As margens são pensadas para garantir sua independência
+              financeira. Com o Kit Inicial (R$&nbsp;350), o faturamento
+              estimado é de R$&nbsp;800. Nosso simulador na página mostra os
+              potenciais de retorno de cada kit.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-pergunta">
+              Posso vender pelo Instagram ou só pessoalmente?
+              <span class="faq-icone"
+                ><svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="14"
+                  height="14"
+                  fill="#c8697a"
+                  viewBox="0 0 256 256"
+                >
+                  <path
+                    d="M228,128a12,12,0,0,1-12,12H140v76a12,12,0,0,1-24,0V140H40a12,12,0,0,1,0-24h76V40a12,12,0,0,1,24,0v76h76A12,12,0,0,1,228,128Z"
+                  ></path></svg
+              ></span>
+            </button>
+            <div class="faq-resposta">
+              Você é livre para vender como preferir: pessoalmente, via
+              WhatsApp, pelo Instagram, em feiras ou em qualquer outro canal.
+              Nossa consultora pode te dar dicas de como maximizar suas vendas
+              em cada plataforma.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-pergunta">
+              Vocês oferecem algum suporte após a compra?
+              <span class="faq-icone"
+                ><svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="14"
+                  height="14"
+                  fill="#c8697a"
+                  viewBox="0 0 256 256"
+                >
+                  <path
+                    d="M228,128a12,12,0,0,1-12,12H140v76a12,12,0,0,1-24,0V140H40a12,12,0,0,1,0-24h76V40a12,12,0,0,1,24,0v76h76A12,12,0,0,1,228,128Z"
+                  ></path></svg
+              ></span>
+            </button>
+            <div class="faq-resposta">
+              Sim! Nosso atendimento é
+              <strong>humanizado e contínuo</strong> via WhatsApp. Nossa equipe
+              está disponível para te ajudar a montar novos pedidos, responder
+              dúvidas e orientar estratégias de venda.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- RODAPÉ -->
+    <footer class="rodape">
+      <div class="rodape-topo">
+        <!-- Lado esquerdo: logo + descrição + redes sociais -->
+        <div class="rodape-esquerda">
+          <img src="images/logo-footer.webp" alt="Logo Dumalia Rodapé" />
+          <p class="rodape-descricao">
+            Lingerie premium há mais de 10 anos celebrando e valorizando a
+            beleza da mulher brasileira com qualidade, cuidado e tradição.
+          </p>
+          <div class="rodape-sociais">
+            <!-- Instagram -->
+            <a
+              href="https://www.instagram.com/dumalia_oficial/"
+              aria-label="Instagram"
+              target="_blank"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                fill="#c8697a"
+                viewBox="0 0 256 256"
+              >
+                <path
+                  d="M128,80a48,48,0,1,0,48,48A48.05,48.05,0,0,0,128,80Zm0,80a32,32,0,1,1,32-32A32,32,0,0,1,128,160ZM176,24H80A56.06,56.06,0,0,0,24,80v96a56.06,56.06,0,0,0,56,56h96a56.06,56.06,0,0,0,56-56V80A56.06,56.06,0,0,0,176,24Zm40,152a40,40,0,0,1-40,40H80a40,40,0,0,1-40-40V80A40,40,0,0,1,80,40h96a40,40,0,0,1,40,40ZM192,76a12,12,0,1,1-12-12A12,12,0,0,1,192,76Z"
+                ></path>
+              </svg>
+            </a>
+            <!-- Facebook -->
+            <a
+              href="https://www.facebook.com/dumaliaoficial"
+              aria-label="Facebook"
+              target="_blank"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                fill="#c8697a"
+                viewBox="0 0 256 256"
+              >
+                <path
+                  d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm8,191.63V152h24a8,8,0,0,0,0-16H136V112a16,16,0,0,1,16-16h16a8,8,0,0,0,0-16H152a32,32,0,0,0-32,32v24H96a8,8,0,0,0,0,16h24v63.63a88,88,0,1,1,16,0Z"
+                ></path>
+              </svg>
+            </a>
+            <!-- WhatsApp -->
+            <a
+              href="https://wa.me/5548999793174?text=Ol%C3%A1%2C%20quero%20ser%20revendedora%20Dumalia%2C%20como%20fa%C3%A7o%3F"
+              aria-label="WhatsApp"
+              target="_blank"
+              rel="noopener"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                fill="#c8697a"
+                viewBox="0 0 256 256"
+              >
+                <path
+                  d="M187.58,144.84l-32-16a8,8,0,0,0-8,.5l-14.69,9.8a40.55,40.55,0,0,1-16-16l9.8-14.69a8,8,0,0,0,.5-8l-16-32A8,8,0,0,0,104,64a40,40,0,0,0-40,40,88.1,88.1,0,0,0,88,88,40,40,0,0,0,40-40A8,8,0,0,0,187.58,144.84ZM152,176a72.08,72.08,0,0,1-72-72A24,24,0,0,1,99.29,80.46l11.48,23L101,118a8,8,0,0,0-.73,7.51,56.47,56.47,0,0,0,30.15,30.15A8,8,0,0,0,138,155l14.61-9.74,23,11.48A24,24,0,0,1,152,176ZM128,24A104,104,0,0,0,36.18,176.88L24.83,210.93a16,16,0,0,0,20.24,20.24l34.05-11.35A104,104,0,1,0,128,24Zm0,192a87.87,87.87,0,0,1-44.06-11.81,8,8,0,0,0-6.54-.67L40,216,52.47,178.6a8,8,0,0,0-.66-6.54A88,88,0,1,1,128,216Z"
+                ></path>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Lado direito: colunas de links -->
+        <div class="rodape-colunas">
+          <div class="rodape-coluna">
+            <h4>Kits</h4>
+            <ul>
+              <li><a href="#simulacao">Kit Inicial</a></li>
+              <li><a href="#simulacao">Kit Empreendedora</a></li>
+              <li><a href="#simulacao">Kit Profissional</a></li>
+            </ul>
+          </div>
+          <div class="rodape-coluna">
+            <h4>Navegação</h4>
+            <ul>
+              <li><a href="#beneficios">Por que escolher Dumalia</a></li>
+              <li><a href="#como">Como funciona</a></li>
+              <li><a href="#simulacao">Simulação</a></li>
+              <li><a href="#depoimentos">Depoimentos</a></li>
+              <li><a href="#faq">FAQ</a></li>
+            </ul>
+          </div>
+          <div class="rodape-coluna">
+            <h4>Legal</h4>
+            <ul>
+              <li><a href="#">Política de Privacidade</a></li>
+              <li><a href="#">Termos e Condições</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Base do rodapé -->
+      <div class="rodape-base">
+        <p>© 2026 Dumalia. Todos os direitos reservados.</p>
+        <div class="rodape-dev">
+          <span>Desenvolvido por</span>
+          <a href="https://duitmarketing.com/" target="_blank">
+            <img
+              src="images/logo-duit.webp"
+              alt="Logo do desenvolvedor"
+              class="logo-dev"
+            />
+          </a>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      // Accordion FAQ
+      document.querySelectorAll(".faq-pergunta").forEach((btn) => {
+        btn.addEventListener("click", () => {
+          const item = btn.closest(".faq-item");
+          const estaAberto = item.classList.contains("aberto");
+          document
+            .querySelectorAll(".faq-item")
+            .forEach((i) => i.classList.remove("aberto"));
+          if (!estaAberto) item.classList.add("aberto");
+        });
+      });
+
+      // Animação de entrada ao rolar
+      const observador = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((e) => {
+            if (e.isIntersecting) e.target.classList.add("visivel");
+          });
+        },
+        { threshold: 0.12 },
+      );
+      document
+        .querySelectorAll(".revelar")
+        .forEach((el) => observador.observe(el));
+
+      // Cabeçalho fixo ao rolar
+      const cabecalho = document.getElementById("cabecalho");
+      window.addEventListener("scroll", () => {
+        if (window.scrollY > 40) {
+          cabecalho.classList.add("fixo");
+        } else {
+          cabecalho.classList.remove("fixo");
+        }
+      });
+
+      // Rastreamento de cliques no WhatsApp (GTM/Meta Pixel)
+      document.querySelectorAll('a[href*="wa.me"]').forEach((link) => {
+        link.addEventListener("click", () => {
+          if (typeof fbq !== "undefined") fbq("track", "Contact");
+          if (typeof gtag !== "undefined")
+            gtag("event", "generate_lead", {
+              event_category: "WhatsApp",
+              event_label: "Dumalia Revenda",
+            });
+          if (typeof dataLayer !== "undefined")
+            dataLayer.push({
+              event: "whatsapp_click",
+              label: "dumalia_revenda",
+            });
+        });
+      });
+    </script>
+  </body>
+</html>
