@@ -148,6 +148,112 @@
         border-bottom-color: var(--rose);
       }
 
+      /* Hambúrguer: position:fixed independente, não causa overflow */
+      .hamburger {
+        display: none;
+        position: fixed;
+        top: 12px;
+        right: 16px;
+        z-index: 102;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 5px;
+        width: 44px;
+        height: 44px;
+        background: rgba(61, 30, 26, 0.75);
+        backdrop-filter: blur(8px);
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        border-radius: 8px;
+        cursor: pointer;
+        padding: 6px;
+      }
+
+      .hamburger span {
+        display: block;
+        width: 22px;
+        height: 2px;
+        background: #fff;
+        border-radius: 2px;
+        transition:
+          transform 0.3s,
+          opacity 0.3s,
+          width 0.3s;
+        transform-origin: center;
+      }
+
+      .hamburger.aberto span:nth-child(1) {
+        transform: translateY(7px) rotate(45deg);
+      }
+      .hamburger.aberto span:nth-child(2) {
+        opacity: 0;
+        width: 0;
+      }
+      .hamburger.aberto span:nth-child(3) {
+        transform: translateY(-7px) rotate(-45deg);
+      }
+
+      /* Overlay do menu mobile */
+      .menu-mobile {
+        display: none;
+        position: fixed;
+        inset: 0;
+        background: var(--chocolate);
+        z-index: 101;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.3s ease;
+      }
+
+      .menu-mobile.visivel {
+        opacity: 1;
+        pointer-events: all;
+      }
+
+      .menu-mobile a {
+        color: rgba(255, 255, 255, 0.85);
+        text-decoration: none;
+        font-size: 1.3rem;
+        font-weight: 600;
+        padding: 22px 40px;
+        width: 100%;
+        text-align: center;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+        transition:
+          color 0.2s,
+          background 0.2s;
+      }
+
+      .menu-mobile a:first-child {
+        border-top: 1px solid rgba(255, 255, 255, 0.07);
+      }
+      .menu-mobile a:hover,
+      .menu-mobile a:active {
+        color: var(--sand);
+        background: rgba(255, 255, 255, 0.04);
+      }
+
+      @media (max-width: 680px) {
+        .cabecalho-nav {
+          display: none;
+        }
+
+        .hamburger {
+          display: flex;
+        }
+
+        .menu-mobile {
+          display: flex;
+        }
+
+        .depoimento-cartao {
+          flex: 0 0 100%;
+        }
+      }
+
       .wa-flutuante {
         position: fixed;
         bottom: 24px;
@@ -237,7 +343,7 @@
         background: var(--rose);
         color: #fff;
         font-family: "Plus Jakarta Sans", sans-serif;
-        font-size: 1rem;
+        font-size: 0.95rem;
         font-weight: 600;
         padding: 16px 32px;
         border-radius: 8px;
@@ -296,6 +402,7 @@
         font-size: 1.35rem;
         font-weight: 700;
         color: var(--sand);
+        flex-shrink: 0;
       }
 
       .divisor-confianca {
@@ -321,6 +428,48 @@
 
       .destaque-confianca strong {
         color: #f7c5ce;
+      }
+
+      @media (max-width: 640px) {
+        .barra-confianca {
+          padding: 16px 16px 12px;
+        }
+
+        .barra-confianca-interna {
+          flex-direction: column;
+          gap: 0;
+          align-items: stretch;
+          text-align: left;
+        }
+
+        .divisor-confianca {
+          display: none;
+        }
+
+        .item-confianca {
+          gap: 6px;
+          padding: 9px 4px;
+          font-size: 0.8rem;
+        }
+
+        .item-confianca:last-of-type {
+          border-bottom: none;
+        }
+
+        .item-confianca span.val {
+          font-size: 1rem;
+        }
+
+        .divisor-barra-confianca {
+          margin: 8px 0 4px;
+        }
+
+        .destaque-confianca {
+          font-size: 0.72rem;
+          letter-spacing: 0.04em;
+          padding-top: 4px;
+          text-align: center;
+        }
       }
 
       section {
@@ -733,18 +882,27 @@
         background: var(--white);
       }
 
-      .depoimentos-grade {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-        gap: 24px;
+      .depoimentos-carrossel {
+        position: relative;
         margin-top: 48px;
+        padding-bottom: 52px;
+      }
+
+      .depoimentos-trilha {
+        display: flex;
+        gap: 24px;
+        transition: transform 0.55s cubic-bezier(0.4, 0, 0.2, 1);
+        will-change: transform;
       }
 
       .depoimento-cartao {
+        flex: 0 0 calc(33.333% - 16px);
         background: var(--cream);
         border: 1px solid var(--sand);
         border-radius: 16px;
         padding: 28px 24px;
+        display: flex;
+        flex-direction: column;
       }
 
       .depoimento-estrelas {
@@ -758,13 +916,14 @@
         color: var(--text);
         line-height: 1.7;
         font-style: italic;
-        margin-bottom: 16px;
+        flex: 1;
       }
 
       .depoimento-autor {
         font-size: 0.85rem;
         color: var(--muted);
         font-weight: 600;
+        margin-top: 16px;
       }
 
       .depoimento-local {
@@ -772,13 +931,32 @@
         color: var(--rose);
       }
 
-      .depoimento-placeholder {
-        border: 2px dashed var(--sand);
-        border-radius: 16px;
-        padding: 32px;
-        text-align: center;
-        color: var(--muted);
-        font-size: 0.9rem;
+      .carrossel-pontos {
+        display: flex;
+        justify-content: center;
+        gap: 8px;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+      }
+
+      .carrossel-ponto {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: var(--sand);
+        border: none;
+        cursor: pointer;
+        padding: 0;
+        transition:
+          background 0.25s,
+          transform 0.25s;
+      }
+
+      .carrossel-ponto.ativo {
+        background: var(--rose);
+        transform: scale(1.35);
       }
 
       .produtos {
@@ -841,6 +1019,78 @@
       .corpo-produto p {
         font-size: 0.92rem;
         color: var(--muted);
+      }
+
+      .kit-btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        margin-top: 24px;
+        background: var(--rose);
+        color: #fff;
+        font-family: "Plus Jakarta Sans", sans-serif;
+        font-size: 0.8rem;
+        font-weight: 700;
+        padding: 13px 16px;
+        border-radius: 8px;
+        text-decoration: none;
+        width: 100%;
+        transition:
+          background 0.2s,
+          transform 0.2s,
+          box-shadow 0.2s;
+        box-shadow: 0 3px 12px rgba(160, 64, 79, 0.3);
+        letter-spacing: 0.01em;
+        line-height: 1.3;
+      }
+
+      .kit-btn:hover {
+        background: var(--rose-dk);
+        transform: translateY(-2px);
+        box-shadow: 0 6px 20px rgba(160, 64, 79, 0.4);
+      }
+
+      .kit-btn svg {
+        width: 16px;
+        height: 16px;
+        flex-shrink: 0;
+      }
+
+      .btn-produto {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        margin-top: 16px;
+        background: transparent;
+        color: var(--rose);
+        font-family: "Plus Jakarta Sans", sans-serif;
+        font-size: 0.88rem;
+        font-weight: 700;
+        padding: 11px 16px;
+        border-radius: 8px;
+        text-decoration: none;
+        width: 100%;
+        border: 2px solid var(--rose);
+        transition:
+          background 0.2s,
+          color 0.2s,
+          transform 0.2s;
+        letter-spacing: 0.01em;
+      }
+
+      .btn-produto:hover {
+        background: var(--rose);
+        color: #fff;
+        transform: translateY(-2px);
+      }
+
+      .btn-produto svg {
+        width: 16px;
+        height: 16px;
+        flex-shrink: 0;
+        fill: currentColor;
       }
 
       .faq {
@@ -1126,15 +1376,83 @@
         }
 
         section {
-          padding: 64px 20px;
+          padding: 56px 16px;
         }
 
         .cabecalho-nav {
-          gap: 6px 20px;
+          gap: 4px 14px;
         }
 
         .cabecalho-nav a {
-          font-size: 0.78rem;
+          font-size: 0.74rem;
+        }
+
+        .hero {
+          padding: 100px 16px 48px;
+        }
+
+        .hero h1 {
+          font-size: clamp(2rem, 8vw, 2.8rem);
+        }
+
+        .hero p br {
+          display: none;
+        }
+
+        .secao-titulo {
+          font-size: clamp(1.6rem, 6vw, 2.4rem);
+        }
+
+        .como-conteudo {
+          padding: 48px 20px 36px;
+        }
+
+        .passos {
+          grid-template-columns: 1fr;
+        }
+
+        .cartao-kit.destaque {
+          padding: 52px 20px 36px;
+        }
+
+        .kit-preco {
+          font-size: 1.9rem;
+        }
+
+        .kit-ganho {
+          font-size: 2.2rem;
+        }
+
+        .depoimento-cartao {
+          flex: 0 0 100%;
+        }
+
+        .chamada-final {
+          padding: 72px 16px;
+        }
+
+        .rodape-topo {
+          padding: 40px 16px 32px;
+        }
+
+        .rodape-colunas {
+          gap: 24px;
+        }
+
+        .rodape-base {
+          padding: 16px;
+          flex-direction: column;
+          gap: 12px;
+          text-align: center;
+        }
+
+        .btn-principal {
+          font-size: 0.92rem;
+          padding: 14px 22px;
+        }
+
+        .kit-btn {
+          font-size: 0.82rem;
         }
       }
     </style>
@@ -1150,6 +1468,25 @@
         <a href="#faq">FAQ</a>
       </nav>
     </header>
+
+    <button
+      class="hamburger"
+      id="hamburger"
+      aria-label="Abrir menu"
+      aria-expanded="false"
+    >
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <nav class="menu-mobile" id="menu-mobile" aria-label="Menu mobile">
+      <a href="#beneficios">Por que escolher Dumalia</a>
+      <a href="#como">Como funciona</a>
+      <a href="#simulacao">Simulação</a>
+      <a href="#depoimentos">Depoimentos</a>
+      <a href="#faq">FAQ</a>
+    </nav>
 
     <a
       href="https://wa.me/5548999793174?text=Ol%C3%A1%2C%20quero%20ser%20revendedora%20Dumalia%2C%20como%20fa%C3%A7o%3F"
@@ -1453,6 +1790,20 @@
               <li>Catálogo digital completo</li>
               <li>Reposição sem pedido mínimo</li>
             </ul>
+            <a
+              href="https://wa.me/5548999793174?text=Ol%C3%A1%2C%20quero%20come%C3%A7ar%20com%20o%20kit%20inicial"
+              class="kit-btn"
+              target="_blank"
+              rel="noopener"
+            >
+              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"
+                  fill="currentColor"
+                />
+              </svg>
+              Começar com o Kit Inicial
+            </a>
           </div>
 
           <div class="cartao-kit destaque">
@@ -1482,6 +1833,20 @@
               <li>Consultoria de vendas personalizada</li>
               <li>Prioridade no atendimento e estoque</li>
             </ul>
+            <a
+              href="https://wa.me/5548999793174?text=Ol%C3%A1%2C%20quero%20come%C3%A7ar%20com%20o%20kit%20empreendedora"
+              class="kit-btn"
+              target="_blank"
+              rel="noopener"
+            >
+              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"
+                  fill="currentColor"
+                />
+              </svg>
+              Começar com o Kit Empreendedora
+            </a>
           </div>
 
           <div class="cartao-kit">
@@ -1497,28 +1862,26 @@
               <li>Desconto progressivo por volume</li>
               <li>Gerente de conta dedicada</li>
             </ul>
+            <a
+              href="https://wa.me/5548999793174?text=Ol%C3%A1%2C%20quero%20come%C3%A7ar%20com%20o%20kit%20profissional"
+              class="kit-btn"
+              target="_blank"
+              rel="noopener"
+            >
+              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"
+                  fill="currentColor"
+                />
+              </svg>
+              Começar com o Kit Profissional
+            </a>
           </div>
         </div>
         <p class="nota-simulacao">
           Atendemos CPF e CNPJ. Margens calculadas com base em revendedoras
           ativas da nossa rede.
         </p>
-
-        <div style="text-align: center; margin-top: 32px">
-          <a
-            href="https://wa.me/5548999793174?text=Ol%C3%A1%2C%20quero%20ser%20revendedora%20Dumalia%2C%20como%20fa%C3%A7o%3F"
-            class="btn-principal"
-            target="_blank"
-            rel="noopener"
-          >
-            <svg viewBox="0 0 24 24">
-              <path
-                d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"
-              />
-            </svg>
-            Quero ser uma revendedora Dumalia
-          </a>
-        </div>
       </div>
     </section>
 
@@ -1531,61 +1894,59 @@
         <p class="secao-subtitulo centralizado" style="margin: 0 auto 0">
           Resultados reais de mulheres reais que apostaram na Dumalia.
         </p>
-        <div class="depoimentos-grade" style="margin-top: 48px">
-          <div class="depoimento-cartao">
-            <div class="depoimento-estrelas">★★★★★</div>
-            <p class="depoimento-texto">
-              "Da para sentir todo cuidado e carinho que possuem em cada
-              detalhe, desde o atendimento até a entrega. Recomendarei com
-              certeza, sem palavras para descrever mesmo o quanto amei."
-            </p>
+        <div class="depoimentos-carrossel" id="carrossel-depoimentos">
+          <div class="depoimentos-trilha" id="trilha-depoimentos">
+            <div class="depoimento-cartao">
+              <div class="depoimento-estrelas">★★★★★</div>
+              <p class="depoimento-texto">
+                "Da para sentir todo cuidado e carinho que possuem em cada
+                detalhe, desde o atendimento até a entrega. Recomendarei com
+                certeza, sem palavras para descrever mesmo o quanto amei."
+              </p>
+            </div>
+            <div class="depoimento-cartao">
+              <div class="depoimento-estrelas">★★★★★</div>
+              <p class="depoimento-texto">
+                "Eu amo essa marca, todo mês eu compro uma peça. Qualidade e
+                atendimento incríveis."
+              </p>
+            </div>
+            <div class="depoimento-cartao">
+              <div class="depoimento-estrelas">★★★★★</div>
+              <p class="depoimento-texto">
+                "Sou revendedora Dumalia a alguns meses, e posso garantir que
+                são peças de ótima qualidade, minhas clientes são só elogios.
+                Ser revendedora da marca você ainda sai com um extra no final do
+                mês."
+              </p>
+            </div>
+            <div class="depoimento-cartao">
+              <div class="depoimento-estrelas">★★★★★</div>
+              <p class="depoimento-texto">
+                "Produtos de ótima qualidade, além da flexibilidade de poder
+                personalizar o mesmo de acordo com o nosso corpo. Muito bom,
+                super recomendo."
+              </p>
+            </div>
+            <div class="depoimento-cartao">
+              <div class="depoimento-estrelas">★★★★★</div>
+              <p class="depoimento-texto">
+                "Passando para avisar que o dia dos namorados foi um sucesso de
+                vendas. Eu vendo a mais de 3 anos mas nunca vendi tanto nessa
+                data, as lingerie de vocês se vendem sozinhas. Essa semana vou
+                passar aí novamente por que já estou sem nada."
+              </p>
+            </div>
+            <div class="depoimento-cartao">
+              <div class="depoimento-estrelas">★★★★★</div>
+              <p class="depoimento-texto">
+                "Meu guarda-roupa é só Dumalia, dos sutiãs as calcinhas, até os
+                biquínis, cangas, pijamas de dormir, as camisolas. Enfim, não
+                tem lançamento que eu não encomende o meu."
+              </p>
+            </div>
           </div>
-
-          <div class="depoimento-cartao">
-            <div class="depoimento-estrelas">★★★★★</div>
-            <p class="depoimento-texto">
-              "Eu amo essa marca, todo mês eu compro uma peça. Qualidade e
-              atendimento incríveis."
-            </p>
-          </div>
-
-          <div class="depoimento-cartao">
-            <div class="depoimento-estrelas">★★★★★</div>
-            <p class="depoimento-texto">
-              "Sou revendedora Dumalia a alguns meses, e posso garantir que são
-              peças de ótima qualidade, minhas clientes são só elogios. Sem
-              contar que ser revendedora da marca voce tem vantagens e ainda sai
-              com um extra no final do mês."
-            </p>
-          </div>
-
-          <div class="depoimento-cartao">
-            <div class="depoimento-estrelas">★★★★★</div>
-            <p class="depoimento-texto">
-              "Produtos de ótima qualidade, além da flexibilidade de poder
-              personalizar o mesmo de acordo com o nosso corpo. Muito bom, super
-              recomendo."
-            </p>
-          </div>
-
-          <div class="depoimento-cartao">
-            <div class="depoimento-estrelas">★★★★★</div>
-            <p class="depoimento-texto">
-              "Passando para avisar que o dia dos namorados foi um sucesso de
-              vendas. Eu vendo a mais de 3 anos mas nunca vendi tanto nessa
-              data, as lingerie de vocês se vendem sozinhas. Essa semana vou
-              passar aí novamente por que já estou sem nada."
-            </p>
-          </div>
-
-          <div class="depoimento-cartao">
-            <div class="depoimento-estrelas">★★★★★</div>
-            <p class="depoimento-texto">
-              "Meu guarda-roupa é só Dumalia, dos sutiãs as calcinhas, até os
-              biquínis, cangas, pijamas de dormir, as camisolas. Enfim, não tem
-              lançamento que eu não encomende o meu."
-            </p>
-          </div>
+          <div class="carrossel-pontos" id="pontos-carrossel"></div>
         </div>
       </div>
     </section>
@@ -1614,6 +1975,20 @@
                 Nossa linha principal. Modelagem exclusiva que respeita e
                 valoriza as curvas, com qualidade que fideliza.
               </p>
+              <a
+                href="https://wa.me/5548999793174?text=Ol%C3%A1%2C%20tenho%20interesse%20nas%20lingeries%20premium"
+                class="btn-produto"
+                target="_blank"
+                rel="noopener"
+              >
+                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"
+                    fill="currentColor"
+                  />
+                </svg>
+                Tenho interesse
+              </a>
             </div>
           </div>
 
@@ -1630,6 +2005,20 @@
                 Conforto e elegância para as noites frias. Peças que encantam e
                 ampliam o seu mix de vendas.
               </p>
+              <a
+                href="https://wa.me/5548999793174?text=Ol%C3%A1%2C%20tenho%20interesse%20nos%20pijamas%20de%20inverno"
+                class="btn-produto"
+                target="_blank"
+                rel="noopener"
+              >
+                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"
+                    fill="currentColor"
+                  />
+                </svg>
+                Tenho interesse
+              </a>
             </div>
           </div>
 
@@ -1646,6 +2035,20 @@
                 Modelagens que trazem confiança para o verão. Amplie seu
                 faturamento na estação mais quente do ano.
               </p>
+              <a
+                href="https://wa.me/5548999793174?text=Ol%C3%A1%2C%20tenho%20interesse%20na%20linha%20praia"
+                class="btn-produto"
+                target="_blank"
+                rel="noopener"
+              >
+                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"
+                    fill="currentColor"
+                  />
+                </svg>
+                Tenho interesse
+              </a>
             </div>
           </div>
         </div>
@@ -1914,6 +2317,7 @@
     </footer>
 
     <script>
+      // FAQ accordion
       document.querySelectorAll(".faq-pergunta").forEach((btn) => {
         btn.addEventListener("click", () => {
           const item = btn.closest(".faq-item");
@@ -1925,6 +2329,7 @@
         });
       });
 
+      // Scroll reveal
       const observador = new IntersectionObserver(
         (entries) => {
           entries.forEach((e) => {
@@ -1937,15 +2342,133 @@
         .querySelectorAll(".revelar")
         .forEach((el) => observador.observe(el));
 
+      // Header fixo
       const cabecalho = document.getElementById("cabecalho");
       window.addEventListener("scroll", () => {
-        if (window.scrollY > 40) {
-          cabecalho.classList.add("fixo");
-        } else {
-          cabecalho.classList.remove("fixo");
-        }
+        cabecalho.classList.toggle("fixo", window.scrollY > 40);
       });
 
+      // Hamburger menu
+      (function () {
+        const btn = document.getElementById("hamburger");
+        const menu = document.getElementById("menu-mobile");
+        if (!btn || !menu) return;
+        function fechar() {
+          btn.classList.remove("aberto");
+          menu.classList.remove("visivel");
+          btn.setAttribute("aria-expanded", "false");
+          document.body.style.overflow = "";
+        }
+        btn.addEventListener("click", () => {
+          const aberto = btn.classList.toggle("aberto");
+          menu.classList.toggle("visivel", aberto);
+          btn.setAttribute("aria-expanded", String(aberto));
+          document.body.style.overflow = aberto ? "hidden" : "";
+        });
+        menu
+          .querySelectorAll("a")
+          .forEach((link) => link.addEventListener("click", fechar));
+        document.addEventListener("keydown", (e) => {
+          if (e.key === "Escape") fechar();
+        });
+      })();
+
+      // Carrossel de depoimentos
+      (function () {
+        const trilha = document.getElementById("trilha-depoimentos");
+        const container = document.getElementById("carrossel-depoimentos");
+        const pontosEl = document.getElementById("pontos-carrossel");
+        if (!trilha || !container) return;
+
+        const total = trilha.children.length;
+        let indice = 0;
+        let intervalo = null;
+        let pausado = false;
+
+        function qtdVisiveis() {
+          const w = container.clientWidth;
+          if (w < 600) return 1;
+          if (w < 900) return 2;
+          return 3;
+        }
+
+        function totalPassos() {
+          return total - qtdVisiveis() + 1;
+        }
+
+        function larguraCartao() {
+          const gap = 24;
+          const n = qtdVisiveis();
+          return (container.clientWidth - gap * (n - 1)) / n;
+        }
+
+        function ir(i) {
+          const passos = totalPassos();
+          indice = ((i % passos) + passos) % passos;
+          trilha.style.transform = `translateX(-${indice * (larguraCartao() + 24)}px)`;
+          document.querySelectorAll(".carrossel-ponto").forEach((p, idx) => {
+            p.classList.toggle("ativo", idx === indice);
+          });
+        }
+
+        function construirPontos() {
+          pontosEl.innerHTML = "";
+          for (let i = 0; i < totalPassos(); i++) {
+            const btn = document.createElement("button");
+            btn.className = "carrossel-ponto" + (i === 0 ? " ativo" : "");
+            btn.setAttribute("aria-label", "Depoimento " + (i + 1));
+            btn.addEventListener("click", () => {
+              ir(i);
+              reiniciar();
+            });
+            pontosEl.appendChild(btn);
+          }
+        }
+
+        function iniciar() {
+          intervalo = setInterval(() => {
+            if (!pausado) ir(indice + 1);
+          }, 4000);
+        }
+        function reiniciar() {
+          clearInterval(intervalo);
+          iniciar();
+        }
+
+        container.addEventListener("mouseenter", () => {
+          pausado = true;
+        });
+        container.addEventListener("mouseleave", () => {
+          pausado = false;
+        });
+        container.addEventListener(
+          "touchstart",
+          (e) => {
+            container._tx = e.touches[0].clientX;
+          },
+          { passive: true },
+        );
+        container.addEventListener(
+          "touchend",
+          (e) => {
+            const dx = e.changedTouches[0].clientX - container._tx;
+            if (Math.abs(dx) > 40) {
+              ir(indice + (dx < 0 ? 1 : -1));
+              reiniciar();
+            }
+          },
+          { passive: true },
+        );
+
+        construirPontos();
+        iniciar();
+        window.addEventListener("resize", () => {
+          construirPontos();
+          ir(0);
+        });
+      })();
+
+      // Tracking WhatsApp
       document.querySelectorAll('a[href*="wa.me"]').forEach((link) => {
         link.addEventListener("click", () => {
           if (typeof fbq !== "undefined") fbq("track", "Contact");
