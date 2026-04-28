@@ -536,27 +536,32 @@
 
       .beneficios-layout {
         display: grid;
-        grid-template-columns: 1fr 300px 1fr;
-        gap: 0 48px;
-        align-items: center;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 24px;
         margin-top: 56px;
-      }
-
-      .beneficios-coluna {
-        display: flex;
-        flex-direction: column;
-        gap: 44px;
       }
 
       .beneficio-item {
         text-align: center;
+        background: #fff;
+        border: 1px solid var(--sand);
+        border-radius: 20px;
+        padding: 36px 28px;
+        transition:
+          box-shadow 0.25s,
+          transform 0.25s;
+      }
+
+      .beneficio-item:hover {
+        box-shadow: 0 8px 32px rgba(200, 105, 122, 0.15);
+        transform: translateY(-3px);
       }
 
       .beneficio-icone {
         width: 48px;
         height: 48px;
         color: var(--rose);
-        margin: 0 auto 14px;
+        margin: 0 auto 16px;
         display: block;
       }
 
@@ -573,35 +578,6 @@
         line-height: 1.65;
       }
 
-      .beneficios-centro {
-        position: relative;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-      }
-
-      .beneficios-centro::after {
-        content: "";
-        position: absolute;
-        bottom: -14px;
-        right: -14px;
-        width: 100%;
-        height: 100%;
-        background: var(--rose-lg);
-        border-radius: 6px;
-        z-index: 0;
-      }
-
-      .beneficios-centro img {
-        position: relative;
-        z-index: 1;
-        width: 100%;
-        height: 380px;
-        object-fit: cover;
-        border-radius: 6px;
-        display: block;
-      }
-
       .beneficios-chamada {
         text-align: center;
         margin-top: 64px;
@@ -609,17 +585,13 @@
 
       @media (max-width: 860px) {
         .beneficios-layout {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+
+      @media (max-width: 560px) {
+        .beneficios-layout {
           grid-template-columns: 1fr;
-          gap: 48px;
-        }
-
-        .beneficios-centro {
-          max-width: 400px;
-          margin: 0 auto;
-        }
-
-        .beneficios-coluna {
-          gap: 36px;
         }
       }
 
@@ -886,6 +858,7 @@
         position: relative;
         margin-top: 48px;
         padding-bottom: 52px;
+        overflow: hidden;
       }
 
       .depoimentos-trilha {
@@ -936,7 +909,7 @@
         justify-content: center;
         gap: 8px;
         position: absolute;
-        bottom: 0;
+        bottom: 10px;
         left: 0;
         right: 0;
       }
@@ -1573,126 +1546,127 @@
         </div>
 
         <div class="beneficios-layout">
-          <div class="beneficios-coluna">
-            <div class="beneficio-item">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="64"
-                height="64"
-                fill="#c8697a"
-                viewBox="0 0 256 256"
-              >
-                <path
-                  d="M223.45,40.07a8,8,0,0,0-7.52-7.52C139.8,28.08,78.82,51,52.82,94a87.09,87.09,0,0,0-12.76,49c.57,15.92,5.21,32,13.79,47.85l-19.51,19.5a8,8,0,0,0,11.32,11.32l19.5-19.51C81,210.73,97.09,215.37,113,215.94q1.67.06,3.33.06A86.93,86.93,0,0,0,162,203.18C205,177.18,227.93,116.21,223.45,40.07ZM153.75,189.5c-22.75,13.78-49.68,14-76.71.77l88.63-88.62a8,8,0,0,0-11.32-11.32L65.73,179c-13.19-27-13-54,.77-76.71,22.09-36.47,74.6-56.44,141.31-54.06C210.2,114.89,190.22,167.41,153.75,189.5Z"
-                ></path>
-              </svg>
-              <h3>Rendas Antialérgicas</h3>
-              <p>
-                Utilizamos rendas em poliamida, que são mais suaves ao toque e
-                ideais para peles sensíveis, um diferencial que fideliza
-                clientes.
-              </p>
-            </div>
-            <div class="beneficio-item">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="64"
-                height="64"
-                fill="#c8697a"
-                viewBox="0 0 256 256"
-              >
-                <path
-                  d="M225.86,102.82c-3.77-3.94-7.67-8-9.14-11.57-1.36-3.27-1.44-8.69-1.52-13.94-.15-9.76-.31-20.82-8-28.51s-18.75-7.85-28.51-8c-5.25-.08-10.67-.16-13.94-1.52-3.56-1.47-7.63-5.37-11.57-9.14C146.28,23.51,138.44,16,128,16s-18.27,7.51-25.18,14.14c-3.94,3.77-8,7.67-11.57,9.14C88,40.64,82.56,40.72,77.31,40.8c-9.76.15-20.82.31-28.51,8S41,67.55,40.8,77.31c-.08,5.25-.16,10.67-1.52,13.94-1.47,3.56-5.37,7.63-9.14,11.57C23.51,109.72,16,117.56,16,128s7.51,18.27,14.14,25.18c3.77,3.94,7.67,8,9.14,11.57,1.36,3.27,1.44,8.69,1.52,13.94.15,9.76.31,20.82,8,28.51s18.75,7.85,28.51,8c5.25.08,10.67.16,13.94,1.52,3.56,1.47,7.63,5.37,11.57,9.14C109.72,232.49,117.56,240,128,240s18.27-7.51,25.18-14.14c3.94-3.77,8-7.67,11.57-9.14,3.27-1.36,8.69-1.44,13.94-1.52,9.76-.15,20.82-.31,28.51-8s7.85-18.75,8-28.51c.08-5.25.16-10.67,1.52-13.94,1.47-3.56,5.37-7.63,9.14-11.57C232.49,146.28,240,138.44,240,128S232.49,109.73,225.86,102.82Zm-11.55,39.29c-4.79,5-9.75,10.17-12.38,16.52-2.52,6.1-2.63,13.07-2.73,19.82-.1,7-.21,14.33-3.32,17.43s-10.39,3.22-17.43,3.32c-6.75.1-13.72.21-19.82,2.73-6.35,2.63-11.52,7.59-16.52,12.38S132,224,128,224s-9.15-4.92-14.11-9.69-10.17-9.75-16.52-12.38c-6.1-2.52-13.07-2.63-19.82-2.73-7-.1-14.33-.21-17.43-3.32s-3.22-10.39-3.32-17.43c-.1-6.75-.21-13.72-2.73-19.82-2.63-6.35-7.59-11.52-12.38-16.52S32,132,32,128s4.92-9.15,9.69-14.11,9.75-10.17,12.38-16.52c2.52-6.1,2.63-13.07,2.73-19.82.1-7,.21-14.33,3.32-17.43S70.51,56.9,77.55,56.8c6.75-.1,13.72-.21,19.82-2.73,6.35-2.63,11.52-7.59,16.52-12.38S124,32,128,32s9.15,4.92,14.11,9.69,10.17,9.75,16.52,12.38c6.1,2.52,13.07,2.63,19.82,2.73,7,.1,14.33.21,17.43,3.32s3.22,10.39,3.32,17.43c.1,6.75.21,13.72,2.73,19.82,2.63,6.35,7.59,11.52,12.38,16.52S224,124,224,128,219.08,137.15,214.31,142.11ZM173.66,98.34a8,8,0,0,1,0,11.32l-56,56a8,8,0,0,1-11.32,0l-24-24a8,8,0,0,1,11.32-11.32L112,148.69l50.34-50.35A8,8,0,0,1,173.66,98.34Z"
-                ></path>
-              </svg>
-              <h3>Metais Hipoalergênicos</h3>
-              <p>
-                Todos os aviamentos metálicos são banhados a ouro ou prata,
-                evitando alergias e elevando o acabamento das peças.
-              </p>
-            </div>
-            <div class="beneficio-item">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="64"
-                height="64"
-                fill="#c8697a"
-                viewBox="0 0 256 256"
-              >
-                <path
-                  d="M178,40c-20.65,0-38.73,8.88-50,23.89C116.73,48.88,98.65,40,78,40a62.07,62.07,0,0,0-62,62c0,70,103.79,126.66,108.21,129a8,8,0,0,0,7.58,0C136.21,228.66,240,172,240,102A62.07,62.07,0,0,0,178,40ZM128,214.8C109.74,204.16,32,155.69,32,102A46.06,46.06,0,0,1,78,56c19.45,0,35.78,10.36,42.6,27a8,8,0,0,0,14.8,0c6.82-16.67,23.15-27,42.6-27a46.06,46.06,0,0,1,46,46C224,155.61,146.24,204.15,128,214.8Z"
-                ></path>
-              </svg>
-              <h3>Modelagem Exclusiva</h3>
-              <p>
-                Modelagens próprias, pensadas para valorizar e respeitar a
-                anatomia da mulher brasileira em todas as etapas.
-              </p>
-            </div>
+          <div class="beneficio-item">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="64"
+              height="64"
+              fill="#c8697a"
+              viewBox="0 0 256 256"
+              class="beneficio-icone"
+            >
+              <path
+                d="M223.45,40.07a8,8,0,0,0-7.52-7.52C139.8,28.08,78.82,51,52.82,94a87.09,87.09,0,0,0-12.76,49c.57,15.92,5.21,32,13.79,47.85l-19.51,19.5a8,8,0,0,0,11.32,11.32l19.5-19.51C81,210.73,97.09,215.37,113,215.94q1.67.06,3.33.06A86.93,86.93,0,0,0,162,203.18C205,177.18,227.93,116.21,223.45,40.07ZM153.75,189.5c-22.75,13.78-49.68,14-76.71.77l88.63-88.62a8,8,0,0,0-11.32-11.32L65.73,179c-13.19-27-13-54,.77-76.71,22.09-36.47,74.6-56.44,141.31-54.06C210.2,114.89,190.22,167.41,153.75,189.5Z"
+              ></path>
+            </svg>
+            <h3>Rendas Antialérgicas</h3>
+            <p>
+              Utilizamos rendas em poliamida, que são mais suaves ao toque e
+              ideais para peles sensíveis, um diferencial que fideliza clientes.
+            </p>
           </div>
 
-          <div class="beneficios-centro">
-            <img src="images/logo.webp" alt="Lingerie Dumalia" />
+          <div class="beneficio-item">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="64"
+              height="64"
+              fill="#c8697a"
+              viewBox="0 0 256 256"
+              class="beneficio-icone"
+            >
+              <path
+                d="M225.86,102.82c-3.77-3.94-7.67-8-9.14-11.57-1.36-3.27-1.44-8.69-1.52-13.94-.15-9.76-.31-20.82-8-28.51s-18.75-7.85-28.51-8c-5.25-.08-10.67-.16-13.94-1.52-3.56-1.47-7.63-5.37-11.57-9.14C146.28,23.51,138.44,16,128,16s-18.27,7.51-25.18,14.14c-3.94,3.77-8,7.67-11.57,9.14C88,40.64,82.56,40.72,77.31,40.8c-9.76.15-20.82.31-28.51,8S41,67.55,40.8,77.31c-.08,5.25-.16,10.67-1.52,13.94-1.47,3.56-5.37,7.63-9.14,11.57C23.51,109.72,16,117.56,16,128s7.51,18.27,14.14,25.18c3.77,3.94,7.67,8,9.14,11.57,1.36,3.27,1.44,8.69,1.52,13.94.15,9.76.31,20.82,8,28.51s18.75,7.85,28.51,8c5.25.08,10.67.16,13.94,1.52,3.56,1.47,7.63,5.37,11.57,9.14C109.72,232.49,117.56,240,128,240s18.27-7.51,25.18-14.14c3.94-3.77,8-7.67,11.57-9.14,3.27-1.36,8.69-1.44,13.94-1.52,9.76-.15,20.82-.31,28.51-8s7.85-18.75,8-28.51c.08-5.25.16-10.67,1.52-13.94,1.47-3.56,5.37-7.63,9.14-11.57C232.49,146.28,240,138.44,240,128S232.49,109.73,225.86,102.82Zm-11.55,39.29c-4.79,5-9.75,10.17-12.38,16.52-2.52,6.1-2.63,13.07-2.73,19.82-.1,7-.21,14.33-3.32,17.43s-10.39,3.22-17.43,3.32c-6.75.1-13.72.21-19.82,2.73-6.35,2.63-11.52,7.59-16.52,12.38S132,224,128,224s-9.15-4.92-14.11-9.69-10.17-9.75-16.52-12.38c-6.1-2.52-13.07-2.63-19.82-2.73-7-.1-14.33-.21-17.43-3.32s-3.22-10.39-3.32-17.43c-.1-6.75-.21-13.72-2.73-19.82-2.63-6.35-7.59-11.52-12.38-16.52S32,132,32,128s4.92-9.15,9.69-14.11,9.75-10.17,12.38-16.52c2.52-6.1,2.63-13.07,2.73-19.82.1-7,.21-14.33,3.32-17.43S70.51,56.9,77.55,56.8c6.75-.1,13.72-.21,19.82-2.73,6.35-2.63,11.52-7.59,16.52-12.38S124,32,128,32s9.15,4.92,14.11,9.69,10.17,9.75,16.52,12.38c6.1,2.52,13.07,2.63,19.82,2.73,7,.1,14.33.21,17.43,3.32s3.22,10.39,3.32,17.43c.1,6.75.21,13.72,2.73,19.82,2.63,6.35,7.59,11.52,12.38,16.52S224,124,224,128,219.08,137.15,214.31,142.11ZM173.66,98.34a8,8,0,0,1,0,11.32l-56,56a8,8,0,0,1-11.32,0l-24-24a8,8,0,0,1,11.32-11.32L112,148.69l50.34-50.35A8,8,0,0,1,173.66,98.34Z"
+              ></path>
+            </svg>
+            <h3>Metais Hipoalergênicos</h3>
+            <p>
+              Todos os aviamentos metálicos são banhados a ouro ou prata,
+              evitando alergias e elevando o acabamento das peças.
+            </p>
           </div>
 
-          <div class="beneficios-coluna">
-            <div class="beneficio-item">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="64"
-                height="64"
-                fill="#c8697a"
-                viewBox="0 0 256 256"
-              >
-                <path
-                  d="M184,24H72A16,16,0,0,0,56,40V76a16.07,16.07,0,0,0,6.4,12.8L114.67,128,62.4,167.2A16.07,16.07,0,0,0,56,180v36a16,16,0,0,0,16,16H184a16,16,0,0,0,16-16V180.36a16.09,16.09,0,0,0-6.35-12.77L141.27,128l52.38-39.6A16.05,16.05,0,0,0,200,75.64V40A16,16,0,0,0,184,24Zm0,16V56H72V40Zm0,176H72V180l56-42,56,42.35Zm-56-98L72,76V72H184v3.64Z"
-                ></path>
-              </svg>
-              <h3>Durabilidade acima da média</h3>
-              <p>
-                Peças que mantêm forma, elasticidade e beleza mesmo após várias
-                lavagens, desde que seguidas corretamente as instruções de
-                cuidado indicadas na etiqueta.
-              </p>
-            </div>
-            <div class="beneficio-item">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="64"
-                height="64"
-                fill="#c8697a"
-                viewBox="0 0 256 256"
-              >
-                <path
-                  d="M223.68,66.15,135.68,18a15.88,15.88,0,0,0-15.36,0l-88,48.17a16,16,0,0,0-8.32,14v95.64a16,16,0,0,0,8.32,14l88,48.17a15.88,15.88,0,0,0,15.36,0l88-48.17a16,16,0,0,0,8.32-14V80.18A16,16,0,0,0,223.68,66.15ZM128,32l80.34,44-29.77,16.3-80.35-44ZM128,120,47.66,76l33.9-18.56,80.34,44ZM40,90l80,43.78v85.79L40,175.82Zm176,85.78h0l-80,43.79V133.82l32-17.51V152a8,8,0,0,0,16,0V107.55L216,90v85.77Z"
-                ></path>
-              </svg>
-              <h3>Facilidade para a revendedora</h3>
-              <p>
-                Após a primeira compra, sem valor mínimo para reposição,
-                proporcionando mais liberdade e flexibilidade para gerir seu
-                estoque do seu jeito.
-              </p>
-            </div>
-            <div class="beneficio-item">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="64"
-                height="64"
-                fill="#c8697a"
-                viewBox="0 0 256 256"
-              >
-                <path
-                  d="M208,40H48A16,16,0,0,0,32,56v56c0,52.72,25.52,84.67,46.93,102.19,23.06,18.86,46,25.26,47,25.53a8,8,0,0,0,4.2,0c1-.27,23.91-6.67,47-25.53C198.48,196.67,224,164.72,224,112V56A16,16,0,0,0,208,40Zm0,72c0,37.07-13.66,67.16-40.6,89.42A129.3,129.3,0,0,1,128,223.62a128.25,128.25,0,0,1-38.92-21.81C61.82,179.51,48,149.3,48,112l0-56,160,0ZM82.34,141.66a8,8,0,0,1,11.32-11.32L112,148.69l50.34-50.35a8,8,0,0,1,11.32,11.32l-56,56a8,8,0,0,1-11.32,0Z"
-                ></path>
-              </svg>
-              <h3>Segurança na venda</h3>
-              <p>
-                O lojista tem a tranquilidade de oferecer às suas clientes peças
-                de alta qualidade, com excelente aceitação e satisfação no uso,
-                tendo total tranquilidade para você vender.
-              </p>
-            </div>
+          <div class="beneficio-item">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="64"
+              height="64"
+              fill="#c8697a"
+              viewBox="0 0 256 256"
+              class="beneficio-icone"
+            >
+              <path
+                d="M178,40c-20.65,0-38.73,8.88-50,23.89C116.73,48.88,98.65,40,78,40a62.07,62.07,0,0,0-62,62c0,70,103.79,126.66,108.21,129a8,8,0,0,0,7.58,0C136.21,228.66,240,172,240,102A62.07,62.07,0,0,0,178,40ZM128,214.8C109.74,204.16,32,155.69,32,102A46.06,46.06,0,0,1,78,56c19.45,0,35.78,10.36,42.6,27a8,8,0,0,0,14.8,0c6.82-16.67,23.15-27,42.6-27a46.06,46.06,0,0,1,46,46C224,155.61,146.24,204.15,128,214.8Z"
+              ></path>
+            </svg>
+            <h3>Modelagem Exclusiva</h3>
+            <p>
+              Modelagens próprias, pensadas para valorizar e respeitar a
+              anatomia da mulher brasileira em todas as etapas.
+            </p>
+          </div>
+
+          <div class="beneficio-item">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="64"
+              height="64"
+              fill="#c8697a"
+              viewBox="0 0 256 256"
+              class="beneficio-icone"
+            >
+              <path
+                d="M184,24H72A16,16,0,0,0,56,40V76a16.07,16.07,0,0,0,6.4,12.8L114.67,128,62.4,167.2A16.07,16.07,0,0,0,56,180v36a16,16,0,0,0,16,16H184a16,16,0,0,0,16-16V180.36a16.09,16.09,0,0,0-6.35-12.77L141.27,128l52.38-39.6A16.05,16.05,0,0,0,200,75.64V40A16,16,0,0,0,184,24Zm0,16V56H72V40Zm0,176H72V180l56-42,56,42.35Zm-56-98L72,76V72H184v3.64Z"
+              ></path>
+            </svg>
+            <h3>Durabilidade acima da média</h3>
+            <p>
+              Peças que mantêm forma, elasticidade e beleza mesmo após várias
+              lavagens, desde que seguidas corretamente as instruções de cuidado
+              indicadas na etiqueta.
+            </p>
+          </div>
+
+          <div class="beneficio-item">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="64"
+              height="64"
+              fill="#c8697a"
+              viewBox="0 0 256 256"
+              class="beneficio-icone"
+            >
+              <path
+                d="M223.68,66.15,135.68,18a15.88,15.88,0,0,0-15.36,0l-88,48.17a16,16,0,0,0-8.32,14v95.64a16,16,0,0,0,8.32,14l88,48.17a15.88,15.88,0,0,0,15.36,0l88-48.17a16,16,0,0,0,8.32-14V80.18A16,16,0,0,0,223.68,66.15ZM128,32l80.34,44-29.77,16.3-80.35-44ZM128,120,47.66,76l33.9-18.56,80.34,44ZM40,90l80,43.78v85.79L40,175.82Zm176,85.78h0l-80,43.79V133.82l32-17.51V152a8,8,0,0,0,16,0V107.55L216,90v85.77Z"
+              ></path>
+            </svg>
+            <h3>Facilidade para a revendedora</h3>
+            <p>
+              Após a primeira compra, sem valor mínimo para reposição,
+              proporcionando mais liberdade e flexibilidade para gerir seu
+              estoque do seu jeito.
+            </p>
+          </div>
+
+          <div class="beneficio-item">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="64"
+              height="64"
+              fill="#c8697a"
+              viewBox="0 0 256 256"
+              class="beneficio-icone"
+            >
+              <path
+                d="M208,40H48A16,16,0,0,0,32,56v56c0,52.72,25.52,84.67,46.93,102.19,23.06,18.86,46,25.26,47,25.53a8,8,0,0,0,4.2,0c1-.27,23.91-6.67,47-25.53C198.48,196.67,224,164.72,224,112V56A16,16,0,0,0,208,40Zm0,72c0,37.07-13.66,67.16-40.6,89.42A129.3,129.3,0,0,1,128,223.62a128.25,128.25,0,0,1-38.92-21.81C61.82,179.51,48,149.3,48,112l0-56,160,0ZM82.34,141.66a8,8,0,0,1,11.32-11.32L112,148.69l50.34-50.35a8,8,0,0,1,11.32,11.32l-56,56a8,8,0,0,1-11.32,0Z"
+              ></path>
+            </svg>
+            <h3>Segurança na venda</h3>
+            <p>
+              O lojista tem a tranquilidade de oferecer às suas clientes peças
+              de alta qualidade, com excelente aceitação e satisfação no uso,
+              tendo total tranquilidade para você vender.
+            </p>
           </div>
         </div>
 
