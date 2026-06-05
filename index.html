@@ -143,7 +143,8 @@
         border-bottom: 2px solid transparent;
       }
 
-      .cabecalho-nav a:hover {
+      .cabecalho-nav a:hover,
+      .cabecalho-nav a.ativo {
         color: var(--sand);
         border-bottom-color: var(--rose);
       }
@@ -2557,6 +2558,27 @@
           construirPontos();
           ir(0);
         });
+      })();
+
+      // Nav ativo por seção visível
+      (function () {
+        const sectionIds = ['beneficios', 'como', 'simulacao', 'depoimentos', 'faq'];
+        const navLinks = document.querySelectorAll('.cabecalho-nav a');
+
+        function updateActive() {
+          const scrollY = window.scrollY + 120;
+          let current = '';
+          sectionIds.forEach(function (id) {
+            const el = document.getElementById(id);
+            if (el && el.offsetTop <= scrollY) current = id;
+          });
+          navLinks.forEach(function (link) {
+            link.classList.toggle('ativo', link.getAttribute('href') === '#' + current);
+          });
+        }
+
+        window.addEventListener('scroll', updateActive, { passive: true });
+        updateActive();
       })();
 
       // Tracking WhatsApp
